@@ -4,16 +4,30 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>RIVER CITY ART CENTER MASTER PAGE</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
-    <div>
-        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    <div id="wrapper">
         
-        </asp:ContentPlaceHolder>
+        <header>
+            SUPER DUPER AWESOME HEADER
+        </header>
+        <nav>
+        &nbsp;<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal">
+            </asp:Menu>
+        </nav>
+        <div id="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceholder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+        <footer>
+            FOOTER TO COME
+            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/>
+        </footer>
+        <!-- ADD SITEMAP HERE -->
     </div>
     </form>
 </body>
