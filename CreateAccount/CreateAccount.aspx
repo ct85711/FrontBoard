@@ -7,13 +7,13 @@
         }
         .auto-style7 {
             width: 127px;
-            height: 59px;
+            height: 80px;
         }
         .auto-style8 {
-            height: 59px;
+            height: 80px;
         }
         .auto-style12 {
-            height: 59px;
+            height: 80px;
             width: 170px;
         }
         .auto-style13 {
@@ -27,18 +27,7 @@
         .auto-style15 {
             height: 30px;
         }
-        .auto-style16 {
-            width: 127px;
-            height: 40px;
-        }
-        .auto-style17 {
-            width: 170px;
-            height: 40px;
-        }
-        .auto-style18 {
-            height: 40px;
-        }
-    </style>
+        </style>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceholder" Runat="Server">
@@ -97,8 +86,8 @@
                 <asp:TextBox ID="txtZip" runat="server" Width="151px"></asp:TextBox>
             </td>
             <td class="auto-style15">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtZip" ErrorMessage="Zipcode is required" ForeColor="#990000"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtZip" Display="Dynamic" ErrorMessage="You need to insert a valid zip code." ForeColor="Red" ValidationExpression="\d{5}(-\d{4})?"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtZip" ErrorMessage="Zipcode is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtZip" Display="Dynamic" ErrorMessage="Must be a valid zip code" ForeColor="#990000" ValidationExpression="\d{5}(-\d{4})?"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
@@ -107,7 +96,7 @@
                 <asp:TextBox ID="txtPhone" runat="server" Width="151px"></asp:TextBox>
             </td>
             <td class="auto-style15">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required" ForeColor="#990000"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPhone" Display="Dynamic" ErrorMessage="Must be a valid phone number" ForeColor="#990000" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"></asp:RegularExpressionValidator>
             </td>
         </tr>
@@ -117,7 +106,7 @@
                 <asp:TextBox ID="txtEmail" runat="server" Width="151px"></asp:TextBox>
             </td>
             <td class="auto-style15">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email address is required" ForeColor="#990000"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email address is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Must be a valid email address" ForeColor="#990000" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             </td>
         </tr>
@@ -140,12 +129,12 @@
             </td>
         </tr>
         <tr>
-            <td class="auto-style16">Confirm Password:</td>
-            <td class="auto-style17">
+            <td class="auto-style13">Confirm Password:</td>
+            <td class="auto-style14">
                 <asp:TextBox ID="txtConfirmPassword" runat="server" Width="151px"></asp:TextBox>
             </td>
-            <td class="auto-style18">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtConfirmPassword" ErrorMessage="You must confirm your password" ForeColor="#990000"></asp:RequiredFieldValidator>
+            <td class="auto-style15">
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtConfirmPassword" ErrorMessage="You must confirm your password" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:CompareValidator ID="CompareValidator1" runat="server" ControlToCompare="txtPassword" ControlToValidate="txtConfirmPassword" Display="Dynamic" ErrorMessage="Both passwords must be the same" ForeColor="#990000"></asp:CompareValidator>
             </td>
         </tr>
