@@ -14,14 +14,14 @@
         }
         .auto-style12 {
             height: 80px;
-            width: 170px;
+            width: 199px;
         }
         .auto-style13 {
             width: 127px;
             height: 30px;
         }
         .auto-style14 {
-            width: 170px;
+            width: 199px;
             height: 30px;
         }
         .auto-style15 {
@@ -38,7 +38,7 @@
         <tr>
             <td class="auto-style13">First Name:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtFirstName" runat="server" Width="152px"></asp:TextBox>
+                <asp:TextBox ID="txtFirstName" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First name is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -47,7 +47,7 @@
         <tr>
             <td class="auto-style13">Last Name:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtLastName" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtLastName" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last name is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -56,7 +56,7 @@
         <tr>
             <td class="auto-style13">Address:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtAddress" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtAddress" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtAddress" ErrorMessage="Address is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -65,7 +65,7 @@
         <tr>
             <td class="auto-style13">City:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtCity" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtCity" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txtCity" ErrorMessage="City is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -74,7 +74,7 @@
         <tr>
             <td class="auto-style13">State:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtState" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtState" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="txtState" ErrorMessage="State is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -83,7 +83,7 @@
         <tr>
             <td class="auto-style13">Zipcode:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtZip" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtZip" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtZip" ErrorMessage="Zipcode is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -93,7 +93,7 @@
         <tr>
             <td class="auto-style13">Phone Number:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtPhone" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtPhone" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -103,7 +103,7 @@
         <tr>
             <td class="auto-style13">Email Address:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtEmail" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtEmail" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email address is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
@@ -113,7 +113,7 @@
         <tr>
             <td class="auto-style13">Username:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtUsername" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtUsername" runat="server" Width="178px"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtUsername" ErrorMessage="Username is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -122,7 +122,7 @@
         <tr>
             <td class="auto-style13">Password:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtPassword" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtPassword" runat="server" Width="178px" TextMode="Password"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="txtPassword" ErrorMessage="Password is required" ForeColor="#990000"></asp:RequiredFieldValidator>
@@ -131,7 +131,7 @@
         <tr>
             <td class="auto-style13">Confirm Password:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="txtConfirmPassword" runat="server" Width="151px"></asp:TextBox>
+                <asp:TextBox ID="txtConfirmPassword" runat="server" Width="178px" TextMode="Password"></asp:TextBox>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator11" runat="server" ControlToValidate="txtConfirmPassword" ErrorMessage="You must confirm your password" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
