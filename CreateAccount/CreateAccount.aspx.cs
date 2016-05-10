@@ -37,6 +37,8 @@ public partial class CreateAccount : System.Web.UI.Page
 
         Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
 
+
+        // TODO - Create a Customer in the Database
         Session["createAccount"] = newCustomer;
 
         Server.Transfer("~/Default.aspx");

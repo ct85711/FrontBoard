@@ -10,11 +10,17 @@ public class Invoice
 {
 	public Invoice(int orderId, int itemId, int userId, DateTime orderDate)
 	{
-        OrderId = orderId;
-        ItemId = itemId;
-        UserId = userId;
-        OrderDate = orderDate;
+        this.OrderId = orderId;
+        this.ItemId = itemId;
+        this.UserId = userId;
+        this.OrderDate = orderDate;
 	}
+
+    public Invoice(int itemId, int userId)
+    {
+        this.ItemId = itemId;
+        this.UserId = userId;
+    }
 
     public Invoice() { }
 
