@@ -1,3 +1,4 @@
+﻿
 ﻿body {
 }
 
@@ -14,11 +15,20 @@ header{
     background-image: url('Images/nuts.jpg');
 }
 nav{
-    /*min-height: 70px;*/border-style: solid;
+    min-height: 30px;
+    border-style: solid;
     border-width: thin;
     padding: 15px 5px 5px 15px;
     background-color: #C0C0C0;
+    /*display: inline-block;*/
+    /*float: left;*/
 }
+
+#login {
+    float: right;
+    /*margin-bottom: 100px;*/
+}
+
 #content{
     border-style: solid;
     border-width: thin;
@@ -31,10 +41,10 @@ footer{
     height: 50px;
     text-align: center;
     background-color: #C0C0C0;
+    background-image: url('Images/')
 }
 section{
     padding: 50px;
     font-size: .75em;
     
 }
-
