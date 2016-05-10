@@ -11,4 +11,12 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         
     }
+    protected void btnCreateAcct_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/CreateAccount/CreateAccount.aspx");
+    }
+    protected void btnLogin_Click(object sender, EventArgs e)
+    {
+
+    }
 }

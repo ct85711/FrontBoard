@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>RIVER CITY ART CENTER</title>
+    <titleRIVER CITY ART CENTER</title>
     <link href="StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -15,8 +15,6 @@
         
         <header>
             
-            <asp:Image ID="headerHeader" runat="server" Height="191px" ImageUrl="~/Images/art-background.jpg" Width="984px" />
-            
         </header>
         <nav>
             <div id="login">  
@@ -24,8 +22,8 @@
                 <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
                 <asp:Label ID="lblPassWord" runat="server" Text="Password: "></asp:Label>
                 <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
-                <asp:Button ID="btnLogin" runat="server" Text="Login: " />&nbsp;
-                <asp:Button ID="btnCreateAcct" runat="server" Text="Create Account: " />
+                <asp:Button ID="btnLogin" runat="server" Text="Login: " OnClick="btnLogin_Click" />&nbsp;
+                <asp:Button ID="btnCreateAcct" runat="server" Text="Create Account: " OnClick="btnCreateAcct_Click" />
               </div>
         &nbsp;<asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" Orientation="Horizontal">
             </asp:Menu>
@@ -38,7 +36,7 @@
                   
         <footer>
             FOOTER TO COME
-            <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/>
+             <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false"/>
         </footer>
         <!-- ADD SITEMAP HERE -->
     </div>
