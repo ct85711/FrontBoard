@@ -28,17 +28,17 @@ public class Customer
     {
 
     }
-    public Customer(int id, string fname, string lname, string address,
-        string city, string state, string zipCode, string email,
+    public Customer(string fname, string lname, string address,
+        string city, string state, string zipCode, string phone, string email,
         string userName, string passwd)
     {
-        this.UserID = id;
         this.FirstName = fname;
         this.LastName = lname;
         this.Address = address;
         this.City = city;
         this.State = state;
         this.Zip = zipCode;
+        this.Phone = phone;
         this.EmailAddress = email;
         this.UserName = userName;
         this.Password = passwd;

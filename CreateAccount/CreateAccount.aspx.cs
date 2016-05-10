@@ -18,7 +18,7 @@ public partial class CreateAccount : System.Web.UI.Page
         string address;
         string city;
         string state;
-        int zipcode;
+        string zipcode;
         string phone;
         string email;
         string username;
@@ -29,7 +29,7 @@ public partial class CreateAccount : System.Web.UI.Page
         address = txtAddress.Text;
         city = txtCity.Text;
         state = txtState.Text;
-        zipcode = Convert.ToInt16(txtZip.Text);
+        zipcode = txtZip.Text;
         phone = txtPhone.Text;
         email = txtEmail.Text;
         username = txtUsername.Text;

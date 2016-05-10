@@ -98,6 +98,7 @@
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="txtZip" ErrorMessage="Zipcode is required" ForeColor="#990000"></asp:RequiredFieldValidator>
+                <asp:RegularExpressionValidator ID="RegularExpressionValidator3" runat="server" ControlToValidate="txtZip" Display="Dynamic" ErrorMessage="You need to insert a valid zip code." ForeColor="Red" ValidationExpression="\d{5}(-\d{4})?"></asp:RegularExpressionValidator>
             </td>
         </tr>
         <tr>
