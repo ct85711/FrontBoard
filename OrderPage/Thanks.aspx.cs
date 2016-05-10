@@ -11,5 +11,7 @@ public partial class OrderPage_Thanks : System.Web.UI.Page
     {
         Invoice invoice1 = (Invoice)Session["Order"];
         lblItem.Text = invoice1.ItemId.ToString();
+        Customer cust = (Customer)Session["createAccount"];
+        lblCustName.Text = cust.FirstName + " " + cust.LastName;
     }
 }

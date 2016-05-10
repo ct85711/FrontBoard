@@ -9,7 +9,16 @@ public partial class OrderPage_Order : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (Session["createAccount"] != null)
+        {
+            lblLogin.Visible = false;
+            TabelPanel.Visible = true;
+        }
+        else
+        {
+            TabelPanel.Visible = false;
+            lblLogin.Visible = true;
+        }
     }
 
     private void orderItem(int itemID)
