@@ -35,11 +35,11 @@ public partial class CreateAccount : System.Web.UI.Page
         username = txtUsername.Text;
         password = txtPassword.Text;
 
-        Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
+        //Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
 
-        Session["createAccount"] = newCustomer;
+        //Session["createAccount"] = newCustomer;
 
-        Server.Transfer("~/Default.aspx");
+        //Server.Transfer("~/Default.aspx");
     }
 
 } // End of class
