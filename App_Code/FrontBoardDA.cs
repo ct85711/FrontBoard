@@ -23,8 +23,8 @@ public static class FrontBoardDA
     // this method inserts the new customer into the database
     public static void InsertCustomer(Customer newCust)
     {
-        string ins = "insert into Customer (FirstName, LastName, Address, City, State, Zip, Phone, Email, UserName, Password) values "
-            + " (@FirstName, @LastName, @Address, @City, @State, @Zip, @Phone, @Email, @UserName, @Password)";
+        string ins = "insert into Customer (FirstName, LastName, Address, City, State, Zip, Phone, EmailAddress, UserName, Password) values "
+            + " (@FirstName, @LastName, @Address, @City, @State, @Zip, @Phone, @EmailAddress, @UserName, @Password)";
         string getID = "Select id from Customer order by id desc limit 1";
 
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
@@ -38,7 +38,7 @@ public static class FrontBoardDA
         insCmd.Parameters.AddWithValue("State", newCust.State);
         insCmd.Parameters.AddWithValue("Zip", newCust.Zip);
         insCmd.Parameters.AddWithValue("Phone", newCust.Phone);
-        insCmd.Parameters.AddWithValue("Email", newCust.EmailAddress);
+        insCmd.Parameters.AddWithValue("EmailAddress", newCust.EmailAddress);
         insCmd.Parameters.AddWithValue("UserName", newCust.UserName);
         insCmd.Parameters.AddWithValue("Password", newCust.Password);
 
@@ -129,7 +129,7 @@ public static class FrontBoardDA
         + "State = @State"
         + "Zip = @Zip"
         + "Phone = @Phone"
-        + "Email = @Email"
+        + "EmailAddress = @Email"
         + "UserName = @UserName"
         + "Password = @Password"
         + "where id = @Id";
