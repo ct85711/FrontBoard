@@ -46,16 +46,25 @@ public static class FrontBoardDA
         insCmd.Parameters.AddWithValue("UserName", newCust.UserName);
         insCmd.Parameters.AddWithValue("Password", newCust.Password);
 
-        //open the db connection
-        dbCon.Open();
+        try
+        {
+            //open the db connection
+            dbCon.Open();
 
-        //insert the customer into the table
-        insCmd.ExecuteNonQuery();
+            //insert the customer into the table
+            insCmd.ExecuteNonQuery();
 
-        //update the customer userID
-        newCust.UserID = (int)getIdCmd.ExecuteScalar();
-
-        dbCon.Close();
+            //update the customer userID
+            newCust.UserID = (int)getIdCmd.ExecuteScalar();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
     public static Customer GetCustomerByUsername(string username)
@@ -137,11 +146,11 @@ public static class FrontBoardDA
         }
         catch (SqlException err)
         {
-
+            //todo
         }
         catch (Exception err)
         {
-
+            //todo
         }
         finally
         {
@@ -161,11 +170,20 @@ public static class FrontBoardDA
         delCmd.Parameters.AddWithValue("id", cust.UserID);
 
         // open the connection to the database
-        dbCon.Open();
+        try
+        {
+            dbCon.Open();
 
-        delCmd.ExecuteNonQuery();
-
-        dbCon.Close();
+            delCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
     //this method updates the customer record in the database
@@ -200,11 +218,20 @@ public static class FrontBoardDA
         updCmd.Parameters.AddWithValue("Id", cust.UserID);
 
         // open the connection to the database
-        dbCon.Open();
+        try
+        {
+            dbCon.Open();
 
-        updCmd.ExecuteNonQuery();
-
-        dbCon.Close();
+            updCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
     //Items

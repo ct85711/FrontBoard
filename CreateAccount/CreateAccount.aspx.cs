@@ -48,7 +48,7 @@ public partial class CreateAccount : System.Web.UI.Page
         }
         catch (Exception ex)
         {
-            lblErrorMessage.Text = "Sorry, there was an error connecting to the database. Try again later."
+            lblErrorMessage.Text = "Sorry, there was an error connecting to the database. Try again later.";
         }
     }
 
