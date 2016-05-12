@@ -54,6 +54,7 @@ public static class FrontBoardDA
         dbCon.Close();
     }
 
+    //this method gets all of the customers in the database and returns a list collection of all of them
     public static List<Customer> GetCustomers()
     {
         List<Customer> customers = new List<Customer>();
@@ -61,7 +62,41 @@ public static class FrontBoardDA
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand getCmd = new SqlCommand(get, dbCon);
 
-        dbCon.Close();
+        try
+        {
+            dbCon.Open();
+            SqlDataReader reader = getCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Customer aCust = new Customer();
+                aCust.UserID = (int)reader["id"];
+                aCust.FirstName = reader["FirstName"].ToString();
+                aCust.LastName = reader["LastName"].ToString();
+                aCust.Address = reader["Address"].ToString();
+                aCust.City = reader["City"].ToString();
+                aCust.State = reader["State"].ToString();
+                aCust.Zip = reader["Zip"].ToString();
+                aCust.Phone = reader["Phone"].ToString();
+                aCust.EmailAddress = reader["EmailAddress"].ToString();
+                aCust.UserName = reader["UserName"].ToString();
+                aCust.Password = reader["Password"].ToString();
+
+                customers.Add(aCust);
+            }
+        }
+        catch (SqlException err)
+        {
+
+        }
+        catch (Exception err)
+        {
+
+        }
+        finally
+        {
+            dbCon.Close();
+        }
 
         return customers;
     }
@@ -98,6 +133,7 @@ public static class FrontBoardDA
         + "UserName = @UserName"
         + "Password = @Password"
         + "where id = @Id";
+
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand updCmd = new SqlCommand(upd, dbCon);
 
