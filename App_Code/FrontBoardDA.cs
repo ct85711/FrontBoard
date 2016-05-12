@@ -11,7 +11,7 @@ using System.Data.SqlClient;
 /// </summary>
 public static class FrontBoardDA
 {
-	private static string GetDBConnectionString()
+    private static string GetDBConnectionString()
     {
         string dbConnection = "";
 
@@ -19,6 +19,8 @@ public static class FrontBoardDA
     }
 
     //customers
+
+    // this method inserts the new customer into the database
     public static void InsertCustomer(Customer newCust)
     {
         string ins = "insert into Customer (FirstName, LastName, Address, City, State, Zip, Phone, Email, UserName, Password) values "
@@ -55,30 +57,66 @@ public static class FrontBoardDA
     public static List<Customer> GetCustomers()
     {
         List<Customer> customers = new List<Customer>();
-        string ins = "";
+        string get = "Select * from customer";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
 
         dbCon.Close();
-
 
         return customers;
     }
 
+    // this method deletes the selected customer from the database
     public static void DeleteCustomer(Customer cust)
     {
-        string ins = "";
+        string del = "delete from Customer where id = @id";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand delCmd = new SqlCommand(del, dbCon);
+
+        delCmd.Parameters.AddWithValue("id", cust.UserID);
+
+        // open the connection to the database
+        dbCon.Open();
+
+        delCmd.ExecuteNonQuery();
 
         dbCon.Close();
     }
 
+    //this method updates the customer record in the database
     public static void UpdateCustomer(Customer cust)
     {
-        string ins = "";
+        string upd = "update customer set"
+        + "FirstName = @FirstName"
+        + "LastName = @LastName"
+        + "Address = @Address"
+        + "City = @City"
+        + "State = @State"
+        + "Zip = @Zip"
+        + "Phone = @Phone"
+        + "Email = @Email"
+        + "UserName = @UserName"
+        + "Password = @Password"
+        + "where id = @Id";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand updCmd = new SqlCommand(upd, dbCon);
+
+        updCmd.Parameters.AddWithValue("FirstName", cust.FirstName);
+        updCmd.Parameters.AddWithValue("LastName", cust.LastName);
+        updCmd.Parameters.AddWithValue("Address", cust.Address);
+        updCmd.Parameters.AddWithValue("City", cust.City);
+        updCmd.Parameters.AddWithValue("State", cust.State);
+        updCmd.Parameters.AddWithValue("Zip", cust.Zip);
+        updCmd.Parameters.AddWithValue("Phone", cust.Phone);
+        updCmd.Parameters.AddWithValue("Email", cust.EmailAddress);
+        updCmd.Parameters.AddWithValue("UserName", cust.UserName);
+        updCmd.Parameters.AddWithValue("Password", cust.Password);
+        updCmd.Parameters.AddWithValue("Id", cust.UserID);
+
+        // open the connection to the database
+        dbCon.Open();
+
+        updCmd.ExecuteNonQuery();
 
         dbCon.Close();
     }
