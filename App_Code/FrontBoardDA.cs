@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 
 
 /// <summary>
@@ -11,9 +12,12 @@ using System.Data.SqlClient;
 /// </summary>
 public static class FrontBoardDA
 {
+    //this method retrieves the connection string to connect to the database
     private static string GetDBConnectionString()
     {
         string dbConnection = "";
+
+        dbConnection = ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString;
 
         return dbConnection;
     }
