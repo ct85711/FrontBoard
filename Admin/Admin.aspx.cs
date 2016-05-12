@@ -34,6 +34,6 @@ public partial class Admin_Admin : System.Web.UI.Page
     }
     protected void btnCustomers_Click(object sender, EventArgs e)
     {
-
+        GridView1.Visible = true;
     }
 }

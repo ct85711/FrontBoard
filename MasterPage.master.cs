@@ -9,10 +9,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        //if ()
-        //{
-
-        //}
+     
 
     }
     protected void btnCreateAcct_Click(object sender, EventArgs e)
