@@ -13,35 +13,43 @@ public partial class CreateAccount : System.Web.UI.Page
 
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
-        string firstName;
-        string lastName;
-        string address;
-        string city;
-        string state;
-        string zipcode;
-        string phone;
-        string email;
-        string username;
-        string password;
+        string firstName = txtFirstName.Text;
+        string lastName = txtLastName.Text;
+        string address = txtAddress.Text;
+        string city = txtCity.Text;
+        string state = txtState.Text;
+        string zipcode = txtZip.Text;
+        string phone = txtPhone.Text;
+        string email = txtEmail.Text;
+        string username = txtUsername.Text;
+        string password = txtPassword.Text;
 
-        firstName = txtFirstName.Text;
-        lastName = txtLastName.Text;
-        address = txtAddress.Text;
-        city = txtCity.Text;
-        state = txtState.Text;
-        zipcode = txtZip.Text;
-        phone = txtPhone.Text;
-        email = txtEmail.Text;
-        username = txtUsername.Text;
-        password = txtPassword.Text;
+        try
+        {
+            var cust = FrontBoardDA.GetCustomerByUsername(username);
 
-        Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
+            if (cust == null)
+            {
+                lblErrorMessage.Text = string.Empty;
 
+                Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
 
-        // TODO - Create a Customer in the Database
-        Session["createAccount"] = newCustomer;
+                FrontBoardDA.InsertCustomer(newCustomer);
 
-        Server.Transfer("~/Default.aspx");
+                // TODO - Create a Customer in the Database
+                Session["createAccount"] = newCustomer;
+
+                Server.Transfer("~/Default.aspx");
+            }
+            else
+            {
+                lblErrorMessage.Text = "That username already exists. Please choose a different one.";
+            }
+        }
+        catch (Exception ex)
+        {
+            lblErrorMessage.Text = "Sorry, there was an error connecting to the database. Try again later."
+        }
     }
 
 } // End of class

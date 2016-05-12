@@ -143,7 +143,9 @@
             <td class="auto-style12">
                 <asp:Button ID="btnCreateAccount" runat="server" OnClick="btnCreateAccount_Click" Text="Create Account" Width="158px" />
             </td>
-            <td class="auto-style8"></td>
+            <td class="auto-style8">
+                <asp:Label ID="lblErrorMessage" runat="server" ForeColor="Red"></asp:Label>
+            </td>
         </tr>
     </table>
 </asp:Content>
