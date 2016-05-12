@@ -41,7 +41,9 @@ footer{
     height: 50px;
     text-align: center;
     background-color: #C0C0C0;
-    background-image: url('Images/')
+    background-image: url('Images/');
+    font-family: 'Harlow Solid';
+    
 }
 section{
     padding: 50px;
