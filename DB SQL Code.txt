@@ -1,4 +1,11 @@
-﻿CREATE TABLE [dbo].[Customer] (
+﻿This file contains the SQL code to create the tables in this project, and for reference only.
+
+DB connection info:
+frontboard.db.2823567.hostedresource.com
+user: Frontboard
+passwd: jS735#!dos
+
+CREATE TABLE [dbo].[Customer] (
     [Id]           INT          IDENTITY (1, 1) NOT NULL,
     [FirstName]    VARCHAR (50) NOT NULL,
     [LastName]     VARCHAR (50) NOT NULL,
