@@ -13,13 +13,14 @@
     PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 
-CREATE TABLE [dbo].[Product_Code] (
+CREATE TABLE [dbo].[Products] (
     [artId]      INT            IDENTITY (1, 1) NOT NULL,
     [supplierId] INT            NULL,
     [artName]    VARCHAR (50)   NULL,
     [artType]    VARCHAR (50)   NULL,
     [price]      DECIMAL (7, 2) NULL,
     [descript]   VARCHAR (75)   NULL,
+	[imageFile] NVARCHAR(75) NULL, 
     PRIMARY KEY CLUSTERED ([artId] ASC)
 );
 

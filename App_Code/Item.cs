@@ -14,6 +14,8 @@ public class Item
     public string artType { get; set; }
     public decimal price { get; set; }
     public string description { get; set; }
+    //this property will hold the file name for the image associated with the product
+    public string imageFile { get; set; }
 
 
 	public Item()
@@ -23,13 +25,14 @@ public class Item
 		//
 	}
 
-    public Item (int artId, int supplierId, string artType, decimal price, string description)
+    public Item (int artId, int supplierId, string artType, decimal price, string description, string imageFile)
     {
         this.artId = artId;
         this.supplierId = supplierId;
         this.artName = artName;
         this.price = price;
         this.description = description;
+        this.imageFile = imageFile;
 
 
     }

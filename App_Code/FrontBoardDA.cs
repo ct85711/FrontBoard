@@ -144,10 +144,6 @@ public static class FrontBoardDA
                 customers.Add(aCust);
             }
         }
-        catch (SqlException err)
-        {
-            //todo
-        }
         catch (Exception err)
         {
             //todo
@@ -235,24 +231,77 @@ public static class FrontBoardDA
     }
 
     //Items
-    public static int InsertItem(Item newItem)
+
+    //insert a new product into the Products table
+    public static void InsertItem(Item newItem)
     {
-        string ins = "";
+        string ins = "insert into Products (supplierId, artName, artType, price, descript, imageFile) values "
+            + "(@supplierId, @artName, @artType, @price, @descript, @imageFile)";
+        string getID = "Select artId from Products order by artId desc limit 1";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand getCmd = new SqlCommand(getID, dbCon);
 
-        dbCon.Close();
-        return 0;
+        insCmd.Parameters.AddWithValue("supplierId", newItem.supplierId);
+        insCmd.Parameters.AddWithValue("artName", newItem.artName);
+        insCmd.Parameters.AddWithValue("artType", newItem.artType);
+        insCmd.Parameters.AddWithValue("price", newItem.price);
+        insCmd.Parameters.AddWithValue("descript", newItem.description);
+        insCmd.Parameters.AddWithValue("imageFile", newItem.imageFile);
+
+        try
+        {
+            dbCon.Open();
+            insCmd.ExecuteNonQuery();
+            newItem.artId = (int)getCmd.ExecuteScalar();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+        
     }
 
-    public static List<Item> GetItem()
+    //get a list of items
+    public static List<Item> GetItems()
     {
         List<Item> items = new List<Item>();
-        string ins = "";
+        string get = "select * from products";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
 
-        dbCon.Close();
+        try
+        {
+            dbCon.Open();
+            SqlDataReader reader = getCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Item aItem = new Item();
+                aItem.artId = (int)reader[0];
+                aItem.supplierId = (int)reader[1];
+                aItem.artName = reader[2].ToString();
+                aItem.artType = reader[3].ToString();
+                aItem.price = (decimal)reader[4];
+                aItem.description = reader[5].ToString();
+                aItem.imageFile = reader[6].ToString();
+
+                items.Add(aItem);
+            }
+            
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
         return items;
     }
 
