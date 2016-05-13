@@ -11,15 +11,17 @@ public partial class MasterPage : System.Web.UI.MasterPage
     protected void Page_Load(object sender, EventArgs e)
     {
         // Hide Login controls when we are logged in
-
         if(HttpContext.Current.Session["createAccount"] != null)
         {
+            lblLogStatus.Text = FrontBoardDA.GetCustomerByUsername(txtUserName.Text).UserName;
+
             lblUserName.Visible = false;
             txtUserName.Visible = false;
             lblPassWord.Visible = false;
             txtPassword.Visible = false;
             btnLogin.Visible = false;
             btnCreateAcct.Visible = false;
+            lblLogStatus.Visible = true;
             btnLogOut.Visible = true;
         }
     }
@@ -68,8 +70,10 @@ public partial class MasterPage : System.Web.UI.MasterPage
         lblPassWord.Visible = true;
         txtPassword.Visible = true;
         btnLogin.Visible = true;
-        btnCreateAcct.Visible = true;
+        btnCreateAcct.Visible = true;        
+        lblLogStatus.Visible = false;
         btnLogOut.Visible = false;
+
         Response.Redirect("~/Default.aspx");
     }
 }
