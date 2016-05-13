@@ -18,7 +18,7 @@
         </header>
         <nav>
             <div id="login">
-                <asp:Button ID="btnLogOff" runat="server" Text="Log Off" CausesValidation="False" Visible="False" />
+                <asp:Button ID="btnLogOut" runat="server" Text="Log Out" CausesValidation="False" Visible="False" OnClick="btnLogOff_Click" />
                 <asp:Label ID="lblUserName" runat="server" Text="User Name: "></asp:Label>
                 <asp:TextBox ID="txtUserName" runat="server"></asp:TextBox>
                 <asp:Label ID="lblPassWord" runat="server" Text="Password: "></asp:Label>
