@@ -13,8 +13,6 @@ public partial class MasterPage : System.Web.UI.MasterPage
         // Hide Login controls when we are logged in
         if(HttpContext.Current.Session["createAccount"] != null)
         {
-            lblLogStatus.Text = FrontBoardDA.GetCustomerByUsername(txtUserName.Text).UserName;
-
             lblUserName.Visible = false;
             txtUserName.Visible = false;
             lblPassWord.Visible = false;
@@ -25,6 +23,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
             btnLogOut.Visible = true;
         }
     }
+
+
 
     protected void btnCreateAcct_Click(object sender, EventArgs e)
     {
@@ -41,10 +41,11 @@ public partial class MasterPage : System.Web.UI.MasterPage
                 if (customer != null &&
                     FrontBoardDA.GetCustomerByUsername(txtUserName.Text).UserName.Equals(txtUserName.Text) &&
                     FrontBoardDA.GetCustomerByUsername(txtUserName.Text).Password.Equals(txtPassword.Text))
-                {
+                {                    
                     Session.Add("createAccount", customer);
                     var meta = new HtmlMeta();
                     meta.HttpEquiv = "refresh";
+                    lblLogStatus.Text = FrontBoardDA.GetCustomerByUsername(txtUserName.Text).UserName;
                 }
                 else
                 {
