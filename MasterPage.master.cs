@@ -12,6 +12,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
     {
         // Hide Log In controls when we are logged in
         if (HttpContext.Current.Session["createAccount"] != null)
+        //if (FrontBoardDA.GetCustomerByUsername(txtUserName.Text) != null)
         {
             lblUserName.Visible = false;
             txtUserName.Visible = false;
