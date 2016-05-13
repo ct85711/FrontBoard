@@ -10,8 +10,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        // Hide Log In controls when we are logged in
-        if (HttpContext.Current.Session["createAccount"] != null)
+        // Hide Login controls when we are logged in
+
+        if(HttpContext.Current.Session["createAccount"] != null)
         {
             lblUserName.Visible = false;
             txtUserName.Visible = false;
@@ -35,7 +36,9 @@ public partial class MasterPage : System.Web.UI.MasterPage
             try
             {
                 var customer = FrontBoardDA.GetCustomerByUsername(txtUserName.Text);
-                if (customer != null)
+                if (customer != null &&
+                    FrontBoardDA.GetCustomerByUsername(txtUserName.Text).UserName.Equals(txtUserName.Text) &&
+                    FrontBoardDA.GetCustomerByUsername(txtUserName.Text).Password.Equals(txtPassword.Text))
                 {
                     Session.Add("createAccount", customer);
                     var meta = new HtmlMeta();
