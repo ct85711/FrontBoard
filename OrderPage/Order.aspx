@@ -22,7 +22,7 @@
 <br />
 &nbsp;
 <br />
-<asp:Panel ID="TabelPanel" runat="server">
+<%--<asp:Panel ID="TabelPanel" runat="server">
     <table class="auto-style1" id="Table1">
         <tr>
             <td class="auto-style2">Item</td>
@@ -58,7 +58,7 @@
             </td>
         </tr>
     </table>
-</asp:Panel>
+</asp:Panel>--%>
 <br />
 <br />
 </asp:Content>
