@@ -25,6 +25,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 
             var customer = (Customer)Session["createAccount"];
             lblLogStatus.Text = customer.UserName;
+            lblLogStatus.Visible = true;
         }
     }
 
