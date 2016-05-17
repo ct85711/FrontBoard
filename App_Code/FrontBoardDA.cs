@@ -307,20 +307,63 @@ public static class FrontBoardDA
 
     public static void DeleteItem(Item aItem)
     {
-        string ins = "";
+        string del = "delete from Products where artId = " + aItem.artId;
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand delCmd = new SqlCommand(del, dbCon);
 
-        dbCon.Close();
+        try
+        {
+            dbCon.Open();
+
+            delCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+
     }
 
     public static void UpdateItem(Item aItem)
     {
-        string ins = "";
+        string upd = "update customer set"
+        + "supplierId = @supplierId"
+        + "artName = @artName"
+        + "artType = @artType"
+        + "price = @price"
+        + "descript = @descript"
+        + "imageFile = @imageFile"
+        + "where artId  = @artId";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand updCmd = new SqlCommand(upd, dbCon);
 
-        dbCon.Close();
+        updCmd.Parameters.AddWithValue("supplierId", aItem.supplierId);
+        updCmd.Parameters.AddWithValue("artName", aItem.artName);
+        updCmd.Parameters.AddWithValue("artType", aItem.artType);
+        updCmd.Parameters.AddWithValue("price", aItem.price);
+        updCmd.Parameters.AddWithValue("descript", aItem.description);
+        updCmd.Parameters.AddWithValue("imageFile", aItem.imageFile);
+        updCmd.Parameters.AddWithValue("artId", aItem.artId);
+
+        // open the connection to the database
+        try
+        {
+            dbCon.Open();
+
+            updCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
     //Invoice
@@ -337,9 +380,9 @@ public static class FrontBoardDA
     public static List<Invoice> GetInvoice()
     {
         List<Invoice> invoices = new List<Invoice>();
-        string ins = "";
+        string get = "";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
 
         dbCon.Close();
         return invoices;
@@ -347,18 +390,18 @@ public static class FrontBoardDA
 
     public static void DeleteInvoice(Invoice aInvoice)
     {
-        string ins = "";
+        string del = "";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand delCmd = new SqlCommand(del, dbCon);
 
         dbCon.Close();
     }
 
     public static void UpdateInvoice(Invoice aInvoice)
     {
-        string ins = "";
+        string upd = "";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        SqlCommand updCmd = new SqlCommand(upd, dbCon);
 
         dbCon.Close();
     }
