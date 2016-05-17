@@ -42,9 +42,14 @@
             </div>
 
             <footer>
+                <br />
                 River City Art Gallery
              <br />
-                Copyright 2016<asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                Copyright 2016<br />
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" ShowStartingNode="false" />
+                <asp:Label ID="lblCounter" runat="server" Text="Label"></asp:Label>
+&nbsp;Views<br />
+
             </footer>
             <!-- ADD SITEMAP HERE -->
         </div>

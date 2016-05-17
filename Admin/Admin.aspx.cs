@@ -11,7 +11,7 @@ public partial class Admin_Admin : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (Session["login"] == null)
+        if (Session["createAccount"] == null)
         {
             HtmlMeta meta = new HtmlMeta();
             meta.HttpEquiv = "refresh";
@@ -21,10 +21,11 @@ public partial class Admin_Admin : System.Web.UI.Page
         }
         else
         {
-            Customer login = (Customer)Session["login"];
-            if (login.UserID.Equals("Admin") && login.Password.Equals("Admin"))
+            Customer login = (Customer)Session["createAccount"];
+            if (login.UserName.Equals("Admin") && login.Password.Equals("Admin"))
             {
-
+                lblMsg.Visible = false;
+                btnCustomers.Visible = true;
             }
             else
             {
