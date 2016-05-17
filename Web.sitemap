@@ -4,5 +4,6 @@
        <siteMapNode url="~/Default.aspx" title="Home"  description="asdf" />
         <siteMapNode url="~/CreateAccount/CreateAccount.aspx" title="Create"  description="" />
         <siteMapNode url="~/OrderPage/Order.aspx" title="Order"  description="asdf" />
+        <siteMapNode url="~/Admin/Admin.aspx" title="Admin"  description="Admin Tools - Admins Only" />
     </siteMapNode>
 </siteMap>

@@ -46,6 +46,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
                     var meta = new HtmlMeta();
                     meta.HttpEquiv = "refresh";
                     lblLogStatus.Text = FrontBoardDA.GetCustomerByUsername(txtUserName.Text).UserName;
+                    Response.Redirect(Request.RawUrl);
                 }
                 else
                 {
