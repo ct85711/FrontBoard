@@ -22,43 +22,8 @@
 <br />
 &nbsp;
 <br />
-<%--<asp:Panel ID="TabelPanel" runat="server">
-    <table class="auto-style1" id="Table1">
-        <tr>
-            <td class="auto-style2">Item</td>
-            <td>Price</td>
-            <td>&nbsp;</td>
-        </tr>
-        <tr>
-            <td class="auto-style3">Art Thing #123</td>
-            <td class="auto-style4">$48.59</td>
-            <td class="auto-style4">
-                <asp:Button ID="btnOrder1" runat="server" Text="Order Me!" OnClick="btnOrder1_Click" />
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2">Art Thing #234</td>
-            <td>$345.45</td>
-            <td>
-                <asp:Button ID="btnOrder2" runat="server" Text="Order Me!" OnClick="btnOrder2_Click" />
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2">Art Thing #345</td>
-            <td>$35.23</td>
-            <td>
-                <asp:Button ID="btnOrder3" runat="server" Text="Order Me!" OnClick="btnOrder3_Click" />
-            </td>
-        </tr>
-        <tr>
-            <td class="auto-style2">Art Thing #456</td>
-            <td>$34.54</td>
-            <td>
-                <asp:Button ID="btnOrder4" runat="server" Text="Order Me!" OnClick="btnOrder4_Click" />
-            </td>
-        </tr>
-    </table>
-</asp:Panel>--%>
+    <asp:Table ID="Table1" runat="server" BorderWidth="1px" GridLines="Both">
+    </asp:Table>
 <br />
 <br />
 </asp:Content>
