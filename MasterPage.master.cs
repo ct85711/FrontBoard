@@ -10,7 +10,7 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Counter.addView();
+       // Counter.addView();
         lblCounter.Text = Counter.getCount().ToString();
         // Hide Login controls when we are logged in
         if(HttpContext.Current.Session["createAccount"] != null)
