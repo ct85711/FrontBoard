@@ -495,21 +495,26 @@ public static class FrontBoardDA
 
     public static void DeleteInvoice(Invoice aInvoice)
     {
-        string del = "";
+        string del = "delete from Invoice where OrderID = " + aInvoice.OrderId;
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand delCmd = new SqlCommand(del, dbCon);
 
-        dbCon.Close();
+        try
+        {
+            dbCon.Open();
+
+            delCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
-    public static void UpdateInvoice(Invoice aInvoice)
-    {
-        string upd = "";
-        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand updCmd = new SqlCommand(upd, dbCon);
-
-        dbCon.Close();
-    }
 
     //Question Table
     public static void InsertQuestion(Question aQuestion)
