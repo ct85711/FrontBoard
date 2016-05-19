@@ -86,9 +86,12 @@ public partial class OrderPage_Order : System.Web.UI.Page
     private void btnPurchase_Click(Object sender, CommandEventArgs e)
     {
         int itemID = Convert.ToInt32(e.CommandArgument.ToString());
-        Item theItem = FrontBoardDA.GetItemById(itemID);
+        var item = FrontBoardDA.GetItemById(itemID);
 
         var customer = Session["createAccount"] as Customer;
+
+        if (customer == null)
+            return;
 
         var invoice = new Invoice()
         {
