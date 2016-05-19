@@ -28,6 +28,7 @@ public partial class Admin_Admin : System.Web.UI.Page
                 lblMsg.Visible = false;
                 btnCustomers.Visible = true;
                 btnQuestions.Visible = true;
+                btnOrders.Visible = true;
             }
             else
             {
@@ -43,10 +44,18 @@ public partial class Admin_Admin : System.Web.UI.Page
     {
         GridView1.Visible = true;
         DataList1.Visible = false;
+        ListView1.Visible = false;
     }
     protected void btnQuestions_Click(object sender, EventArgs e)
     {
         DataList1.Visible = true;
         GridView1.Visible = false;
+        ListView1.Visible = false;
+    }
+    protected void btnOrders_Click(object sender, EventArgs e)
+    {
+        DataList1.Visible = false;
+        GridView1.Visible = false;
+        ListView1.Visible = true;
     }
 }
