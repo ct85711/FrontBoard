@@ -31,3 +31,10 @@ CREATE TABLE [dbo].[Products] (
     PRIMARY KEY CLUSTERED ([artId] ASC)
 );
 
+CREATE TABLE [dbo].[Invoice]
+(
+	[OrderId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [ItemId] INT NOT NULL, 
+    [UserId] INT NOT NULL, 
+    [OrderDate] DATETIME NULL
+)

@@ -35,6 +35,9 @@ public partial class OrderPage_Order : System.Web.UI.Page
         TableCell cell4Header = new TableCell();
         cell4Header.Text = "Purchase";
         rowHeader.Cells.Add(cell4Header);
+        TableCell cell5Header = new TableCell();
+        cell5Header.Text = "Image";
+        rowHeader.Cells.Add(cell5Header);
         Table1.Rows.Add(rowHeader);
 
         List<Item> items = FrontBoardDA.GetItems();
@@ -58,8 +61,23 @@ public partial class OrderPage_Order : System.Web.UI.Page
             TableCell cell3 = new TableCell();
             cell3.Text = i.price.ToString();
             row.Cells.Add(cell3);
+            TableCell cell4 = new TableCell();
+            cell4.Controls.Add(btnPurchase);
+            row.Cells.Add(cell4);
             TableCell cell5 = new TableCell();
-            cell5.Controls.Add(btnPurchase);
+            if (i.imageFile != "")
+            {
+                ImageButton thumbnail = new ImageButton();
+                thumbnail.ImageUrl = "~/Images/" + i.imageFile;
+                thumbnail.Width = (Unit)75;
+                thumbnail.Height = (Unit)75;
+                thumbnail.OnClientClick = "window.open('../Images/"+i.imageFile + "')";
+                cell5.Controls.Add(thumbnail);
+            }
+            else
+            {
+                cell5.Text = "";
+            }
             row.Cells.Add(cell5);
             Table1.Rows.Add(row);
         }
