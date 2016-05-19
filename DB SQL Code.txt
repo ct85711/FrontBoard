@@ -38,3 +38,12 @@ CREATE TABLE [dbo].[Invoice]
     [UserId] INT NOT NULL, 
     [OrderDate] DATETIME NULL
 )
+
+CREATE TABLE [dbo].[Questions]
+(
+	[Id] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [FirstName] VARCHAR(50) NULL, 
+    [LastName] VARCHAR(50) NULL, 
+    [Email] VARCHAR(50) NULL, 
+    [Question] VARCHAR(MAX) NULL
+)
