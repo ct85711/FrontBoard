@@ -510,4 +510,93 @@ public static class FrontBoardDA
 
         dbCon.Close();
     }
+
+    //Question Table
+    public static void InsertQuestion(Question aQuestion)
+    {
+        // invoiceid should be auto-incrementing, so only need the other three fields
+        var statement = "INSERT INTO Questions (FirstName, LastName, Email, Question) VALUES" +
+            "(@FirstName, @LastName, @Email, @Question";
+        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        var insCmd = new SqlCommand(statement, dbCon);
+
+        insCmd.Parameters.AddWithValue("FirstName", aQuestion.FristName);
+        insCmd.Parameters.AddWithValue("LastName", aQuestion.LastName);
+        insCmd.Parameters.AddWithValue("Email", aQuestion.Email);
+        insCmd.Parameters.AddWithValue("Question", aQuestion.theQuestion);
+
+        try
+        {
+            dbCon.Open();
+
+            insCmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+    }
+
+    public static List<Question> GetQuestions()
+    {
+        List<Question> items = new List<Question>();
+        string get = "select * from Questions";
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
+
+        try
+        {
+            dbCon.Open();
+            SqlDataReader reader = getCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Question aQuestion = new Question();
+                aQuestion.QuestionId = (int)reader[0];
+                aQuestion.FristName = reader[1].ToString();
+                aQuestion.LastName = reader[2].ToString();
+                aQuestion.Email = reader[3].ToString();
+                aQuestion.theQuestion = reader[4].ToString();
+
+                items.Add(aQuestion);
+            }
+
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+        return items;
+    }
+
+    public static void DeleteQuestion(Question aQuestion)
+    {
+        string del = "delete from Questions where Id = " + aQuestion.QuestionId;
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand delCmd = new SqlCommand(del, dbCon);
+
+        try
+        {
+            dbCon.Open();
+
+            delCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+
+    }
 }
