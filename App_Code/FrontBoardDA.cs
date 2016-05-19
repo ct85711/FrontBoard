@@ -113,6 +113,52 @@ public static class FrontBoardDA
         return customer;
     }
 
+    public static Customer GetCustomerById(int userID)
+    {
+        string query = "SELECT * FROM CUSTOMER WHERE ID = " + userID;
+        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        var getCmd = new SqlCommand(query, dbCon);
+        Customer customer = new Customer();
+
+        try
+        {
+            dbCon.Open();
+
+            using (var dr = getCmd.ExecuteReader())
+            {
+                if (dr.Read())
+                {
+                    customer = new Customer()
+                    {
+                        UserID = (int)dr["id"],
+                        FirstName = dr["FirstName"].ToString(),
+                        LastName = dr["LastName"].ToString(),
+                        Address = dr["Address"].ToString(),
+                        City = dr["City"].ToString(),
+                        State = dr["State"].ToString(),
+                        Zip = dr["Zip"].ToString(),
+                        Phone = dr["Phone"].ToString(),
+                        EmailAddress = dr["EmailAddress"].ToString(),
+                        UserName = dr["UserName"].ToString(),
+                        Password = dr["Password"].ToString(),
+                    };
+                }
+                else
+                    customer = null; // return null if no customer with a matching username is found
+            }
+        }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+
+        return customer;
+    }
+
     //this method gets all of the customers in the database and returns a list collection of all of them
     public static List<Customer> GetCustomers()
     {
