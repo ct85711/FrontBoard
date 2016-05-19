@@ -18,6 +18,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             meta.Content = "2;url=../Default.aspx";
             this.Page.Controls.Add(meta);
             lblMsg.Text = "You must login before accessing this page. Redirecting you in 5 seconds";
+            btnQuestions.Visible = false;
         }
         else
         {
@@ -26,6 +27,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             {
                 lblMsg.Visible = false;
                 btnCustomers.Visible = true;
+                btnQuestions.Visible = true;
             }
             else
             {
@@ -40,5 +42,11 @@ public partial class Admin_Admin : System.Web.UI.Page
     protected void btnCustomers_Click(object sender, EventArgs e)
     {
         GridView1.Visible = true;
+        DataList1.Visible = false;
+    }
+    protected void btnQuestions_Click(object sender, EventArgs e)
+    {
+        DataList1.Visible = true;
+        GridView1.Visible = false;
     }
 }

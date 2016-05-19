@@ -511,7 +511,7 @@ public static class FrontBoardDA
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
         var statement = "INSERT INTO Questions (FirstName, LastName, Email, Question) VALUES" +
-            "(@FirstName, @LastName, @Email, @Question";
+            "(@FirstName, @LastName, @Email, @Question)";
         var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         var insCmd = new SqlCommand(statement, dbCon);
 
@@ -528,7 +528,7 @@ public static class FrontBoardDA
         }
         catch (Exception ex)
         {
-
+            throw;
         }
         finally
         {
