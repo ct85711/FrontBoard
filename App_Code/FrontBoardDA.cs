@@ -449,6 +449,7 @@ public static class FrontBoardDA
         }
     }
 
+    //Invoice Table
     public static void InsertInvoice(Invoice invoice)
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
@@ -480,30 +481,93 @@ public static class FrontBoardDA
     public static List<Invoice> GetInvoice()
     {
         List<Invoice> invoices = new List<Invoice>();
-        string get = "";
+        string get = "select * from Invoice";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand getCmd = new SqlCommand(get, dbCon);
 
-        dbCon.Close();
+        try
+        {
+            dbCon.Open();
+            SqlDataReader reader = getCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Invoice aInvoice = new Invoice();
+                aInvoice.OrderId = (int)reader[0];
+                aInvoice.ItemId = (int)reader[1];
+                aInvoice.UserId = (int)reader[2];
+                aInvoice.OrderDate = (DateTime)reader[3];
+
+                invoices.Add(aInvoice);
+            }
+
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+        return invoices;
+    }
+
+    public static List<Invoice> GetInvoiceByUderID(int userId)
+    {
+        List<Invoice> invoices = new List<Invoice>();
+        string get = "select * from Invoice where OrderId = " + userId;
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
+
+        try
+        {
+            dbCon.Open();
+            SqlDataReader reader = getCmd.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Invoice aInvoice = new Invoice();
+                aInvoice.OrderId = (int)reader[0];
+                aInvoice.ItemId = (int)reader[1];
+                aInvoice.UserId = (int)reader[2];
+                aInvoice.OrderDate = (DateTime)reader[3];
+
+                invoices.Add(aInvoice);
+            }
+
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
         return invoices;
     }
 
     public static void DeleteInvoice(Invoice aInvoice)
     {
-        string del = "";
+        string del = "delete from Invoice where OrderId = " + aInvoice.OrderId;
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand delCmd = new SqlCommand(del, dbCon);
 
-        dbCon.Close();
-    }
+        try
+        {
+            dbCon.Open();
 
-    public static void UpdateInvoice(Invoice aInvoice)
-    {
-        string upd = "";
-        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand updCmd = new SqlCommand(upd, dbCon);
-
-        dbCon.Close();
+            delCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
     //Question Table
