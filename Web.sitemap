@@ -6,5 +6,6 @@
         <siteMapNode url="~/OrderPage/Order.aspx" title="Order"  description="asdf" />
         <siteMapNode url="~/Admin/Admin.aspx" title="Admin"  description="Admin Tools - Admins Only" />
         <siteMapNode url="~/AboutUs/AboutUs.aspx" title="About Us"  description="A short description about River City Art Gallery" />
+      <siteMapNode url="~/ContactUs/ContactUs.aspx" title="Contact Us"  description="Ask Us Questions!" />
     </siteMapNode>
 </siteMap>

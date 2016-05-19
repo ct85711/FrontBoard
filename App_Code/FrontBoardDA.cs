@@ -70,15 +70,15 @@ public static class FrontBoardDA
     public static Customer GetCustomerByUsername(string username)
     {
         string query = "SELECT * FROM CUSTOMER WHERE username = '" + username +"'";
-        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        var getCmd = new SqlCommand(query, dbCon);
-        var customer = new Customer();
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand getCmd = new SqlCommand(query, dbCon);
+        Customer customer;
 
         try
         {
             dbCon.Open();
 
-            using (var dr = getCmd.ExecuteReader())
+            using (SqlDataReader dr = getCmd.ExecuteReader())
             {
                 if (dr.Read())
                 {
@@ -116,15 +116,15 @@ public static class FrontBoardDA
     public static Customer GetCustomerById(int userID)
     {
         string query = "SELECT * FROM CUSTOMER WHERE ID = " + userID;
-        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        var getCmd = new SqlCommand(query, dbCon);
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand getCmd = new SqlCommand(query, dbCon);
         Customer customer = new Customer();
 
         try
         {
             dbCon.Open();
 
-            using (var dr = getCmd.ExecuteReader())
+            using (SqlDataReader dr = getCmd.ExecuteReader())
             {
                 if (dr.Read())
                 {
@@ -452,13 +452,13 @@ public static class FrontBoardDA
     public static void InsertInvoice(Invoice invoice)
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
-        var statement = "INSERT INTO INVOICE (ItemId, UserId, OrderDate) VALUES" +
+        string statement = "INSERT INTO INVOICE (ItemId, UserId, OrderDate) VALUES" +
             "(@ItemId, @UserId, @OrderDate)";
         string getID = "SELECT OrderId FROM invoice ORDER BY Orderid DESC";
 
-        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        var insCmd = new SqlCommand(statement, dbCon);
-        var getIdCmd = new SqlCommand(getID, dbCon);
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand insCmd = new SqlCommand(statement, dbCon);
+        SqlCommand getIdCmd = new SqlCommand(getID, dbCon);
 
         insCmd.Parameters.AddWithValue("ItemId", invoice.ItemId);
         insCmd.Parameters.AddWithValue("UserId", invoice.UserId);
@@ -515,10 +515,10 @@ public static class FrontBoardDA
     public static void InsertQuestion(Question aQuestion)
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
-        var statement = "INSERT INTO Questions (FirstName, LastName, Email, Question) VALUES" +
-            "(@FirstName, @LastName, @Email, @Question";
-        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        var insCmd = new SqlCommand(statement, dbCon);
+        string statement = "INSERT INTO Questions (FirstName, LastName, Email, Question) VALUES" +
+            "(@FirstName, @LastName, @Email, @Question)";
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand insCmd = new SqlCommand(statement, dbCon);
 
         insCmd.Parameters.AddWithValue("FirstName", aQuestion.FristName);
         insCmd.Parameters.AddWithValue("LastName", aQuestion.LastName);
@@ -533,7 +533,7 @@ public static class FrontBoardDA
         }
         catch (Exception ex)
         {
-
+            throw;
         }
         finally
         {

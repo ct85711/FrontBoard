@@ -14,12 +14,16 @@ public partial class ContactUs_ContactUs : System.Web.UI.Page
     }
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
-        string text;
+      /*  string text;
         text = "Name: " + txtFirstName.Text + " " + txtLastName.Text +
                Environment.NewLine + "Phone: " + txtPhone.Text +
                Environment.NewLine + "Email: " + txtEmail.Text +
                Environment.NewLine + "Question: " + txtBox.Text.Trim();
         File.AppendAllText(HttpContext.Current.Server.MapPath("/Questions.txt"), text);
-        File.AppendAllText(HttpContext.Current.Server.MapPath("/Questions.txt"), Environment.NewLine);
+        File.AppendAllText(HttpContext.Current.Server.MapPath("/Questions.txt"), Environment.NewLine); */
+
+        Question question = new Question(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtBox.Text.Trim());
+
+        FrontBoardDA.InsertQuestion(question);
     }
 }

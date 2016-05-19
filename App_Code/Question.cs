@@ -26,5 +26,13 @@ public class Question
         this.theQuestion = quest;
     }
 
+    public Question(string first, string last, string email, string quest)
+    {
+        this.FristName = first;
+        this.LastName = last;
+        this.Email = email;
+        this.theQuestion = quest;
+    }
+
         
 }
