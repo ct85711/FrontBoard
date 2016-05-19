@@ -18,7 +18,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceholder" Runat="Server">
-    <asp:Label ID="lblLogin" runat="server" Text="You Must Create an Account to Order Items."></asp:Label>
+    <asp:Label ID="lblLogin" runat="server" Text="You Must Create an Account to Order Items." ForeColor="Red"></asp:Label>
 <br />
 &nbsp;
 <br />
