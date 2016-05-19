@@ -453,9 +453,12 @@ public static class FrontBoardDA
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
         var statement = "INSERT INTO INVOICE (ItemId, UserId, OrderDate) VALUES" +
-            "(@ItemId, @UserId, @OrderDate";
+            "(@ItemId, @UserId, @OrderDate)";
+        string getID = "SELECT OrderId FROM invoice ORDER BY Orderid DESC";
+
         var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         var insCmd = new SqlCommand(statement, dbCon);
+        var getIdCmd = new SqlCommand(getID, dbCon);
 
         insCmd.Parameters.AddWithValue("ItemId", invoice.ItemId);
         insCmd.Parameters.AddWithValue("UserId", invoice.UserId);
@@ -466,6 +469,8 @@ public static class FrontBoardDA
             dbCon.Open();
 
             insCmd.ExecuteNonQuery();
+
+            invoice.OrderId = (int)getIdCmd.ExecuteScalar();
         }
         catch (Exception ex)
         {
