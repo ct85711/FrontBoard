@@ -449,15 +449,32 @@ public static class FrontBoardDA
         }
     }
 
-    //Invoice
-    public static int InsertInvoice(Invoice newInvoice)
+    public static void InsertInvoice(Invoice invoice)
     {
-        string ins = "";
-        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand insCmd = new SqlCommand(ins, dbCon);
+        // invoiceid should be auto-incrementing, so only need the other three fields
+        var statement = "INSERT INTO INVOICE (ItemId, UserId, OrderDate) VALUES" +
+            "(@ItemId, @UserId, @OrderDate";
+        var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        var insCmd = new SqlCommand(statement, dbCon);
 
-        dbCon.Close();
-        return 0;
+        insCmd.Parameters.AddWithValue("ItemId", invoice.ItemId);
+        insCmd.Parameters.AddWithValue("UserId", invoice.UserId);
+        insCmd.Parameters.AddWithValue("OrderDate", DateTime.Today);
+
+        try
+        {
+            dbCon.Open();
+
+            insCmd.ExecuteNonQuery();
+        }
+        catch (Exception ex)
+        {
+
+        }
+        finally
+        {
+            dbCon.Close();
+        }
     }
 
     public static List<Invoice> GetInvoice()

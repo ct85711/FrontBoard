@@ -62,7 +62,6 @@ public partial class OrderPage_Order : System.Web.UI.Page
             cell5.Controls.Add(btnPurchase);
             row.Cells.Add(cell5);
             Table1.Rows.Add(row);
-
         }
     }
 
@@ -70,9 +69,20 @@ public partial class OrderPage_Order : System.Web.UI.Page
     {
         int itemID = Convert.ToInt32(e.CommandArgument.ToString());
         Item theItem = FrontBoardDA.GetItemById(itemID);
-        
-        // SEND AN EMAIL TO OURSELVES / CREATE AN ORDER IN THE DB
 
-        //Response.Redirect("~/OrderPage/Thanks.aspx");
+        var customer = Session["createAccount"] as Customer;
+
+        var invoice = new Invoice()
+        {
+            ItemId = itemID,
+            UserId = customer.UserID
+        };
+
+        Session["order"] = invoice;
+        
+        // CREATE AN ORDER IN THE DB
+        FrontBoardDA.InsertInvoice(invoice);
+
+        Response.Redirect("~/OrderPage/Thanks.aspx");
     }
 }

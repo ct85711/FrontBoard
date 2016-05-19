@@ -9,9 +9,10 @@ public partial class OrderPage_Thanks : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        Invoice invoice1 = (Invoice)Session["Order"];
-        lblItem.Text = invoice1.ItemId.ToString();
-        Customer cust = (Customer)Session["createAccount"];
+        var invoice = (Invoice)Session["order"];
+        lblItem.Text = invoice.ItemId.ToString();
+
+        var cust = (Customer)Session["createAccount"];
         lblCustName.Text = cust.FirstName + " " + cust.LastName;
     }
 }
