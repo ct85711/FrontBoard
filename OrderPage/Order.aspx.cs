@@ -68,10 +68,9 @@ public partial class OrderPage_Order : System.Web.UI.Page
 
     private void btnPurchase_Click(Object sender, CommandEventArgs e)
     {
-        int itemID = (int)e.CommandArgument;
-
-        //TODO: Need to code in this method.  We need a method to retrieve a product from the DB using an item ID
-
+        int itemID = Convert.ToInt32(e.CommandArgument.ToString());
+        Item theItem = FrontBoardDA.GetItemById(itemID);
+        
         // SEND AN EMAIL TO OURSELVES / CREATE AN ORDER IN THE DB
 
         //Response.Redirect("~/OrderPage/Thanks.aspx");

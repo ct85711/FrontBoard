@@ -305,6 +305,43 @@ public static class FrontBoardDA
         return items;
     }
 
+    public static Item GetItemById(int itemID)
+    {
+        Item aItem = new Item();
+        string get = "select * from products where artId=" + itemID;
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
+
+        try
+        {
+            dbCon.Open();
+            SqlDataReader reader = getCmd.ExecuteReader();
+
+            if (reader.Read())
+            {
+                
+                aItem.artId = (int)reader[0];
+                aItem.supplierId = (int)reader[1];
+                aItem.artName = reader[2].ToString();
+                aItem.artType = reader[3].ToString();
+                aItem.price = (decimal)reader[4];
+                aItem.description = reader[5].ToString();
+                aItem.imageFile = reader[6].ToString();
+
+            }
+
+        }
+        catch (Exception err)
+        {
+            //todo
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+        return aItem;
+    }
+
     public static void DeleteItem(Item aItem)
     {
         string del = "delete from Products where artId = " + aItem.artId;
