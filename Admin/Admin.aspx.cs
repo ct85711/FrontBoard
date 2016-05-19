@@ -29,6 +29,10 @@ public partial class Admin_Admin : System.Web.UI.Page
             }
             else
             {
+                HtmlMeta meta = new HtmlMeta();
+                meta.HttpEquiv = "refresh";
+                meta.Content = "2;url=../Default.aspx";
+                this.Page.Controls.Add(meta);
                 lblMsg.Text = "You must login before accessing this page. Redirecting you in 5 seconds";
             }
         }
