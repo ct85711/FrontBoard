@@ -454,7 +454,7 @@ public static class FrontBoardDA
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
         var statement = "INSERT INTO INVOICE (ItemId, UserId, OrderDate) VALUES" +
-            "(@ItemId, @UserId, @OrderDate";
+            "(@ItemId, @UserId, @OrderDate)";
         var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         var insCmd = new SqlCommand(statement, dbCon);
 
