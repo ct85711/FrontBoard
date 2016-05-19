@@ -29,7 +29,9 @@
     </div>
 
     <div id="floatright">
-        &nbsp;<img alt="Artwork by John Schmidt" class="auto-style1" src="../Images/JohnSchmidtArt.png" /></div>
+        &nbsp;<img alt="Artwork by John Schmidt" class="auto-style1" src="../Images/JohnSchmidtArt.png" />
+
+    </div>
 
     
 
