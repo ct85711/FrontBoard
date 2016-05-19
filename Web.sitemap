@@ -1,9 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="" title="Home"  description="asdf">
-       <siteMapNode url="~/Default.aspx" title="Home"  description="asdf" />
+        <siteMapNode url="~/Default.aspx" title="Home"  description="asdf" />
         <siteMapNode url="~/CreateAccount/CreateAccount.aspx" title="Create"  description="" />
         <siteMapNode url="~/OrderPage/Order.aspx" title="Order"  description="asdf" />
         <siteMapNode url="~/Admin/Admin.aspx" title="Admin"  description="Admin Tools - Admins Only" />
+      <siteMapNode url="~/AboutUs/AboutUs.aspx" title="About Us"  description="A short description about River City Art Gallery" />
     </siteMapNode>
 </siteMap>
