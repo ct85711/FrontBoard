@@ -53,16 +53,7 @@
             </td>
         </tr>
 
-        <tr>
-            <td class="auto-style3">Phone Number:</td>
-            <td class="auto-style14">
-                <asp:TextBox ID="txtPhone" runat="server" Width="178px"></asp:TextBox>
-            </td>
-            <td class="auto-style15">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator7" runat="server" ControlToValidate="txtPhone" ErrorMessage="Phone number is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
-                <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="txtPhone" Display="Dynamic" ErrorMessage="Must be a valid phone number" ForeColor="#990000" ValidationExpression="((\(\d{3}\) ?)|(\d{3}-))?\d{3}-\d{4}"></asp:RegularExpressionValidator>
-            </td>
-        </tr>
+
         <tr>
             <td class="auto-style5">Email Address:</td>
             <td class="auto-style6">

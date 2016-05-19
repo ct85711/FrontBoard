@@ -36,6 +36,7 @@ nav{
     min-height: 400px;
 }
 footer{
+    clear: both;
     border-style: solid;
     border-width: thin;
     height: 150px;
@@ -49,4 +50,16 @@ section{
     padding: 50px;
     font-size: .75em;
     
+}
+
+#floatleft{
+    float: left;
+    width: 520px;
+}
+
+#floatright{
+    float: right;
+    width: 411px;
+    margin-top: 50px;
+    margin-right: 15px;
 }

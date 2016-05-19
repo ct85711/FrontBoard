@@ -449,14 +449,16 @@ public static class FrontBoardDA
         }
     }
 
-    //Invoice Table
     public static void InsertInvoice(Invoice invoice)
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
         var statement = "INSERT INTO INVOICE (ItemId, UserId, OrderDate) VALUES" +
             "(@ItemId, @UserId, @OrderDate)";
+        string getID = "SELECT OrderId FROM invoice ORDER BY Orderid DESC";
+
         var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         var insCmd = new SqlCommand(statement, dbCon);
+        var getIdCmd = new SqlCommand(getID, dbCon);
 
         insCmd.Parameters.AddWithValue("ItemId", invoice.ItemId);
         insCmd.Parameters.AddWithValue("UserId", invoice.UserId);
@@ -467,6 +469,8 @@ public static class FrontBoardDA
             dbCon.Open();
 
             insCmd.ExecuteNonQuery();
+
+            invoice.OrderId = (int)getIdCmd.ExecuteScalar();
         }
         catch (Exception ex)
         {
@@ -481,93 +485,30 @@ public static class FrontBoardDA
     public static List<Invoice> GetInvoice()
     {
         List<Invoice> invoices = new List<Invoice>();
-        string get = "select * from Invoice";
+        string get = "";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand getCmd = new SqlCommand(get, dbCon);
 
-        try
-        {
-            dbCon.Open();
-            SqlDataReader reader = getCmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Invoice aInvoice = new Invoice();
-                aInvoice.OrderId = (int)reader[0];
-                aInvoice.ItemId = (int)reader[1];
-                aInvoice.UserId = (int)reader[2];
-                aInvoice.OrderDate = (DateTime)reader[3];
-
-                invoices.Add(aInvoice);
-            }
-
-        }
-        catch (Exception err)
-        {
-            //todo
-        }
-        finally
-        {
-            dbCon.Close();
-        }
-        return invoices;
-    }
-
-    public static List<Invoice> GetInvoiceByUderID(int userId)
-    {
-        List<Invoice> invoices = new List<Invoice>();
-        string get = "select * from Invoice where OrderId = " + userId;
-        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
-        SqlCommand getCmd = new SqlCommand(get, dbCon);
-
-        try
-        {
-            dbCon.Open();
-            SqlDataReader reader = getCmd.ExecuteReader();
-
-            while (reader.Read())
-            {
-                Invoice aInvoice = new Invoice();
-                aInvoice.OrderId = (int)reader[0];
-                aInvoice.ItemId = (int)reader[1];
-                aInvoice.UserId = (int)reader[2];
-                aInvoice.OrderDate = (DateTime)reader[3];
-
-                invoices.Add(aInvoice);
-            }
-
-        }
-        catch (Exception err)
-        {
-            //todo
-        }
-        finally
-        {
-            dbCon.Close();
-        }
+        dbCon.Close();
         return invoices;
     }
 
     public static void DeleteInvoice(Invoice aInvoice)
     {
-        string del = "delete from Invoice where OrderId = " + aInvoice.OrderId;
+        string del = "";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand delCmd = new SqlCommand(del, dbCon);
 
-        try
-        {
-            dbCon.Open();
+        dbCon.Close();
+    }
 
-            delCmd.ExecuteNonQuery();
-        }
-        catch (Exception err)
-        {
-            //todo
-        }
-        finally
-        {
-            dbCon.Close();
-        }
+    public static void UpdateInvoice(Invoice aInvoice)
+    {
+        string upd = "";
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand updCmd = new SqlCommand(upd, dbCon);
+
+        dbCon.Close();
     }
 
     //Question Table
@@ -575,7 +516,7 @@ public static class FrontBoardDA
     {
         // invoiceid should be auto-incrementing, so only need the other three fields
         var statement = "INSERT INTO Questions (FirstName, LastName, Email, Question) VALUES" +
-            "(@FirstName, @LastName, @Email, @Question";
+            "(@FirstName, @LastName, @Email, @Question)";
         var dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         var insCmd = new SqlCommand(statement, dbCon);
 
@@ -592,7 +533,7 @@ public static class FrontBoardDA
         }
         catch (Exception ex)
         {
-
+            throw;
         }
         finally
         {
