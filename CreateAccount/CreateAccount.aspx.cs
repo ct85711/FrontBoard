@@ -11,6 +11,21 @@ public partial class CreateAccount : System.Web.UI.Page
     {
     }
 
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        string theme = (string)Session["theme"];
+
+        if (theme == null || theme.Equals("Default"))
+        {
+            Session["theme"] = "Default";
+            Page.Theme = "Default";
+        }
+        else if (theme.Equals("Dark"))
+        {
+            Page.Theme = "Dark";
+        }
+    }
+
     protected void btnCreateAccount_Click(object sender, EventArgs e)
     {
         string firstName = txtFirstName.Text;

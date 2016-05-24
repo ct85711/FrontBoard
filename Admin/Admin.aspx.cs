@@ -9,6 +9,20 @@ using System.Web.UI.HtmlControls;
 
 public partial class Admin_Admin : System.Web.UI.Page
 {
+    protected void Page_PreInit(object sender, EventArgs e)
+    {
+        string theme = (string)Session["theme"];
+
+        if (theme == null || theme.Equals("Default"))
+        {
+            Session["theme"] = "Default";
+            Page.Theme = "Default";
+        }
+        else if (theme.Equals("Dark"))
+        {
+            Page.Theme = "Dark";
+        }
+    }
     protected void Page_Load(object sender, EventArgs e)
     {
         if (Session["createAccount"] == null)
