@@ -1,0 +1,68 @@
+﻿
+﻿body {
+    background-color: black;
+}
+
+#wrapper{
+    border-style: solid;
+    width: 1000px;
+    margin: auto;
+}
+
+header{
+    border: thin solid black;
+    height: 200px;
+    text-align: center;
+    background-image: url('Images/Header.jpg');
+}
+nav{
+    min-height: 30px;
+    border-style: solid;
+    border-width: thin;
+    padding: 15px 5px 5px 15px;
+    background-color: #C0C0C0;
+    /*display: inline-block;*/
+    /*float: left;*/
+}
+
+#login {
+    float: right;
+    /*margin-bottom: 100px;*/
+}
+
+#content{
+    border-style: solid;
+    border-width: thin;
+    padding: 15px;
+    min-height: 400px;
+    background-color: black;
+    color: white;
+}
+footer{
+    clear: both;
+    border-style: solid;
+    border-width: thin;
+    height: 150px;
+    text-align: center;
+    background-color: #C0C0C0;
+    background-image: url('Images/');
+    font-family: 'Harlow Solid';
+    
+}
+section{
+    padding: 50px;
+    font-size: .75em;
+    
+}
+
+#floatleft{
+    float: left;
+    width: 520px;
+}
+
+#floatright{
+    float: right;
+    width: 411px;
+    margin-top: 50px;
+    margin-right: 15px;
+}
