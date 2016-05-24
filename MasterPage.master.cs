@@ -10,7 +10,8 @@ public partial class MasterPage : System.Web.UI.MasterPage
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-       // Counter.addView();
+        
+        // Counter.addView();
         lblCounter.Text = Counter.getCount().ToString();
         // Hide Login controls when we are logged in
         if(HttpContext.Current.Session["createAccount"] != null)
@@ -89,5 +90,15 @@ public partial class MasterPage : System.Web.UI.MasterPage
         btnLogOut.Visible = false;
 
         Response.Redirect("~/Default.aspx");
+    }
+    protected void btnDefaultTheme_Click(object sender, EventArgs e)
+    {
+        Session["theme"] = "Default";
+        Response.Redirect(Request.Url.ToString(), false);
+    }
+    protected void btnDarkTheme_Click(object sender, EventArgs e)
+    {
+        Session["theme"] = "Dark";
+        Server.Transfer(Request.FilePath);
     }
 }

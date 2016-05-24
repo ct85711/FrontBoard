@@ -50,6 +50,9 @@
                 <asp:Label ID="lblCounter" runat="server" Text="Label"></asp:Label>
 &nbsp;Views<br />
 
+                <asp:Button ID="btnDefaultTheme" runat="server" OnClick="btnDefaultTheme_Click" Text="Default" />
+                <asp:Button ID="btnDarkTheme" runat="server" OnClick="btnDarkTheme_Click" Text="Dark" />
+
             </footer>
             <!-- ADD SITEMAP HERE -->
         </div>
