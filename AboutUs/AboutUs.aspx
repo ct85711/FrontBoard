@@ -25,6 +25,8 @@
     <br />
 
     Recently other local artists have started at the River City Art Gallery and gone on to national fame. These artists include John Buhrmann, John Schmidt, Nathan Jochum, Craig D., Chris Torske, and Brandon Welch.<br />
+        <br />
+        <asp:HyperLink ID="lnkContactUs" runat="server" NavigateUrl="~/ContactUs/ContactUs.aspx">Contact Us</asp:HyperLink>
     <br />
     </div>
 
