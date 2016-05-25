@@ -77,6 +77,11 @@ th {
     padding: 5px;
 }
 
+tr {
+    background-color:#FFFFFF;
+    color:#000000;
+}
+
 .th {
     font-family: Verdana, Arial, Helvetica, sans-serif;
     background-color: #CBCBCB;
@@ -85,6 +90,11 @@ th {
     text-align: center;
     height: 33px;
 }
+
+/*.tr {
+    background-color:#FFFFFF;
+    color:#000000;
+}*/
 
 .tr:nth-child(odd) {
     background-color: #DCDCDC;
