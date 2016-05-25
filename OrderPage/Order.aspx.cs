@@ -27,15 +27,12 @@ public partial class OrderPage_Order : System.Web.UI.Page
         if (Session["createAccount"] != null)
         {
             lblLogin.Visible = false;
-            //TabelPanel.Visible = true;
         }
         else
         {
-            //TabelPanel.Visible = false;
             lblLogin.Visible = true;
         }
-
-        //HtmlTable tableContent = new HtmlTable();
+        
         TableRow rowHeader = new TableRow();
         TableCell cell1Header = new TableCell();
         cell1Header.Text = "Name";
@@ -53,6 +50,7 @@ public partial class OrderPage_Order : System.Web.UI.Page
         cell5Header.Text = "Image";
         rowHeader.Cells.Add(cell5Header);
         Table1.Rows.Add(rowHeader);
+        rowHeader.Attributes.Add("class", "th");
 
         List<Item> items = FrontBoardDA.GetItems();
 
@@ -79,6 +77,7 @@ public partial class OrderPage_Order : System.Web.UI.Page
             cell4.Controls.Add(btnPurchase);
             row.Cells.Add(cell4);
             TableCell cell5 = new TableCell();
+
             if (i.imageFile != "")
             {
                 ImageButton thumbnail = new ImageButton();
@@ -92,8 +91,10 @@ public partial class OrderPage_Order : System.Web.UI.Page
             {
                 cell5.Text = "";
             }
+
             row.Cells.Add(cell5);
             Table1.Rows.Add(row);
+            row.Attributes.Add("class", "tr");
         }
     }
 
