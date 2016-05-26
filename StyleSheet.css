@@ -63,10 +63,18 @@ section {
     margin-right: 15px;
 }
 
+table {
+    margin-left:15px;
+}
+
 th {
     background-color: #CBCBCB;
     color: #000000;
     text-align: center;
+    padding: 5px;
+}
+
+td {
     padding: 5px;
 }
 
@@ -83,9 +91,5 @@ th {
 }
 
 .listView {
-    margin-left: 50px;
-}
-
-.dataList {
-    margin-left: 50px;
+    margin-left: 111px;
 }
