@@ -5,11 +5,13 @@ using System.Web;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.ComponentModel;
 
 
 /// <summary>
 /// Summary description for FrontBoardDA
 /// </summary>
+[DataObject(true)]
 public static class FrontBoardDA
 {
     //this method retrieves the connection string to connect to the database
@@ -25,6 +27,7 @@ public static class FrontBoardDA
     //customers
 
     // this method inserts the new customer into the database
+    [DataObjectMethod(DataObjectMethodType.Insert)]
     public static void InsertCustomer(Customer newCust)
     {
         string ins = "insert into Customer (FirstName, LastName, Address, City, State, Zip, Phone, EmailAddress, UserName, Password) values "
@@ -160,6 +163,7 @@ public static class FrontBoardDA
     }
 
     //this method gets all of the customers in the database and returns a list collection of all of them
+   [DataObjectMethod(DataObjectMethodType.Select)]
     public static List<Customer> GetCustomers()
     {
         List<Customer> customers = new List<Customer>();
@@ -203,6 +207,7 @@ public static class FrontBoardDA
     }
 
     // this method deletes the selected customer from the database
+    [DataObjectMethod(DataObjectMethodType.Delete)]
     public static void DeleteCustomer(Customer cust)
     {
         string del = "delete from Customer where id = @id";
@@ -229,6 +234,7 @@ public static class FrontBoardDA
     }
 
     //this method updates the customer record in the database
+    [DataObjectMethod(DataObjectMethodType.Update)]
     public static void UpdateCustomer(Customer cust)
     {
         string upd = "update customer set"
