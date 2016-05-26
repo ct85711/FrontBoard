@@ -94,7 +94,7 @@
             <table runat="server">
                 <tr runat="server">
                     <td runat="server">
-                        <table id="itemPlaceholderContainer" runat="server" border="1" style="border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
+                        <table id="itemPlaceholderContainer" runat="server" border="1" cellpadding="10" style="border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                             <tr runat="server" style="background-color: #DCDCDC; color: #000000;">
                                 <th runat="server">OrderId</th>
                                 <th runat="server">ItemId</th>
@@ -155,7 +155,7 @@
     </asp:DataList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [FirstName], [LastName], [Email], [Question] FROM [Questions]"></asp:SqlDataSource>
     
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Visible="False">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" cellpadding="5" Visible="False">
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
             <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
