@@ -124,7 +124,7 @@
         <tr>
             <td class="auto-style13">Password:</td>
             <td class="auto-style14">
-                <asp:TextBox ID="PasswordTextBox" runat="server" Text='<%# Bind("Password") %>' />
+                <asp:TextBox ID="PasswordTextBox" runat="server" Text='<%# Bind("Password") %>' TextMode="Password"/>
             </td>
             <td class="auto-style15">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator10" runat="server" ControlToValidate="PasswordTextBox" ErrorMessage="Password is required" ForeColor="#990000"></asp:RequiredFieldValidator>
