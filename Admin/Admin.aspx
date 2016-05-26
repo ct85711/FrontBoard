@@ -14,7 +14,7 @@
 
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="OrderId" DataSourceID="SqlDataSource3" Visible="False">
         <AlternatingItemTemplate>
-            <tr style="background-color: #FFF8DC;">
+            <tr style="background-color: #FFF8DC; color: #000000">
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
