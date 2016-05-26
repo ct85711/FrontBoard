@@ -29,7 +29,7 @@ public partial class Admin_Admin : System.Web.UI.Page
         {
             HtmlMeta meta = new HtmlMeta();
             meta.HttpEquiv = "refresh";
-            meta.Content = "2;url=../Default.aspx";
+            meta.Content = "5;url=../Default.aspx";
             this.Page.Controls.Add(meta);
             lblMsg.Text = "You must login before accessing this page. Redirecting you in 5 seconds";
             btnQuestions.Visible = false;
@@ -43,12 +43,13 @@ public partial class Admin_Admin : System.Web.UI.Page
                 btnCustomers.Visible = true;
                 btnQuestions.Visible = true;
                 btnOrders.Visible = true;
+                btnProducts.Visible = true;
             }
             else
             {
                 HtmlMeta meta = new HtmlMeta();
                 meta.HttpEquiv = "refresh";
-                meta.Content = "2;url=../Default.aspx";
+                meta.Content = "5;url=../Default.aspx";
                 this.Page.Controls.Add(meta);
                 lblMsg.Text = "You must login before accessing this page. Redirecting you in 5 seconds";
             }
@@ -59,17 +60,27 @@ public partial class Admin_Admin : System.Web.UI.Page
         GridView1.Visible = true;
         DataList1.Visible = false;
         ListView1.Visible = false;
+        DetailsView1.Visible = false;
     }
     protected void btnQuestions_Click(object sender, EventArgs e)
     {
         DataList1.Visible = true;
         GridView1.Visible = false;
         ListView1.Visible = false;
+        DetailsView1.Visible = false;
     }
     protected void btnOrders_Click(object sender, EventArgs e)
     {
         DataList1.Visible = false;
         GridView1.Visible = false;
         ListView1.Visible = true;
+        DetailsView1.Visible = false;
+    }
+    protected void btnProducts_Click(object sender, EventArgs e)
+    {
+        DataList1.Visible = false;
+        GridView1.Visible = false;
+        ListView1.Visible = false;
+        DetailsView1.Visible = true;
     }
 }
