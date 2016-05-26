@@ -80,7 +80,6 @@ th {
 }
 
 .th {
-    font-family: Verdana, Arial, Helvetica, sans-serif;
     background-color: #CBCBCB;
     color: #000000;
     font-size: 1.1em;
@@ -93,7 +92,7 @@ th {
     color:#000000;
 }*/
 
-.tr:nth-child(odd) {
+/*.tr:nth-child(odd) {
     background-color: #DCDCDC;
     color: #000000;
 }
@@ -101,4 +100,4 @@ th {
 .tr:nth-child(even) {
     background-color: #FFF8DC;
     color: #000000;
-}
+}*/

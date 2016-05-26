@@ -14,7 +14,7 @@
 
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="OrderId" DataSourceID="SqlDataSource3" Visible="False">
         <AlternatingItemTemplate>
-            <tr style="background-color: #FFF8DC; color: #000000">
+            <tr style="">
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -30,7 +30,7 @@
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <tr style="background-color: #008A8C; color: #FFFFFF;">
+            <tr style="">
                 <td>
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -50,7 +50,7 @@
             </tr>
         </EditItemTemplate>
         <EmptyDataTemplate>
-            <table runat="server" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
+            <table runat="server" style="border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                 <tr>
                     <td>No data was returned.</td>
                 </tr>
@@ -75,7 +75,7 @@
             </tr>
         </InsertItemTemplate>
         <ItemTemplate>
-            <tr style="background-color: #DCDCDC; color: #000000;">
+            <tr style="">
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -94,7 +94,7 @@
             <table runat="server">
                 <tr runat="server">
                     <td runat="server">
-                        <table id="itemPlaceholderContainer" runat="server" border="1" style="background-color: #FFFFFF; border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px; font-family: Verdana, Arial, Helvetica, sans-serif;">
+                        <table id="itemPlaceholderContainer" runat="server" border="1" style="border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                             <tr runat="server" style="background-color: #DCDCDC; color: #000000;">
                                 <th runat="server">OrderId</th>
                                 <th runat="server">ItemId</th>
