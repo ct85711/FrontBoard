@@ -14,7 +14,7 @@
 
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="OrderId" DataSourceID="SqlDataSource3" Visible="False">
         <AlternatingItemTemplate>
-            <tr style="">
+            <tr class="trOdd">
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -30,7 +30,7 @@
             </tr>
         </AlternatingItemTemplate>
         <EditItemTemplate>
-            <tr style="">
+            <tr>
                 <td>
                     <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
@@ -57,7 +57,7 @@
             </table>
         </EmptyDataTemplate>
         <InsertItemTemplate>
-            <tr style="">
+            <tr>
                 <td>
                     <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
                     <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
@@ -75,7 +75,7 @@
             </tr>
         </InsertItemTemplate>
         <ItemTemplate>
-            <tr style="">
+            <tr class="trEven">
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -135,7 +135,7 @@
         </SelectedItemTemplate>
     </asp:ListView>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [OrderId], [ItemId], [UserId], [OrderDate] FROM [Invoice]"></asp:SqlDataSource>
-    
+
     <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" Visible="False">
         <ItemTemplate>
             FirstName:
@@ -154,8 +154,8 @@
         </ItemTemplate>
     </asp:DataList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [FirstName], [LastName], [Email], [Question] FROM [Questions]"></asp:SqlDataSource>
-    
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" cellpadding="5" Visible="False">
+
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="5" Visible="False">
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
             <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
@@ -170,6 +170,5 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [FirstName], [LastName], [Address], [City], [State], [Zip], [Phone], [EmailAddress], [UserName], [Password] FROM [Customer]"></asp:SqlDataSource>
-
 </asp:Content>
 

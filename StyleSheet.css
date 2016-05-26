@@ -64,7 +64,7 @@ section {
 }
 
 th {
-    background-color: #CBCBCB;
+    background-color: #C0C0C0;
     color: #000000;
     text-align: center;
     padding: 5px;
@@ -75,24 +75,25 @@ th {
 }
 
 .th {
-    background-color: #CBCBCB;
+    background-color: #C0C0C0;
     color: #000000;
     font-size: 1.1em;
     text-align: center;
     height: 33px;
 }
 
-/*.tr {
-    background-color:#FFFFFF;
-    color:#000000;
-}*/
+.trEven {
+    background-color:#E3EAEB;
+}
 
-/*.tr:nth-child(odd) {
-    background-color: #DCDCDC;
-    color: #000000;
+.trOdd {
+    background-color:#DCDCDC;
 }
 
 .tr:nth-child(even) {
-    background-color: #FFF8DC;
-    color: #000000;
-}*/
+    background-color: #E3EAEB;
+}
+
+.tr:nth-child(odd) {
+    background-color: #DCDCDC;
+}
