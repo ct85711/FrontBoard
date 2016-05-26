@@ -84,13 +84,3 @@ th {
     text-align: center;
     height: 33px;
 }
-
-/*.tr:nth-child(odd) {
-    background-color: #DCDCDC;
-    color: #000000;
-}
-
-.tr:nth-child(even) {
-    background-color: #FFF8DC;
-    color: #000000;
-}*/
