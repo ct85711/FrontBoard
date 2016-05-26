@@ -9,6 +9,22 @@ public partial class CreateAccount : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        if (HttpContext.Current.Session["createAccount"] != null)
+        {
+            lblChanged.Visible = false;
+            lblPassword.Visible = true;
+            pnlChange.Visible = true;
+            lblCreateAccount.Visible = false;
+            pnlCreate.Visible = false;
+        }
+        else
+        {
+            lblCreateAccount.Visible = true;
+            pnlCreate.Visible = true;
+            lblChanged.Visible = false;
+            lblPassword.Visible = false;
+            pnlChange.Visible = false;
+        }
     }
 
     protected void Page_PreInit(object sender, EventArgs e)
@@ -67,4 +83,21 @@ public partial class CreateAccount : System.Web.UI.Page
         }
     }
 
+    protected void btnChangePasswod_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("~/CreateAccount/ChangePassword.aspx");
+    }
+    protected void btnChange_Click(object sender, EventArgs e)
+    {
+        Customer oldPass = FrontBoardDA.GetCustomerByUsername(txtUsername.Text);
+        if (oldPass != null)
+        {
+            if (oldPass.Password.Equals(txtCurrentPassword.Text))
+            {
+                oldPass.Password = txtConfirmPassword.Text;
+                FrontBoardDA.UpdateCustomer(oldPass);
+                lblChanged.Text = "Changed Password!";
+            }
+        }
+    }
 } // End of class
