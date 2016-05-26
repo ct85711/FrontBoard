@@ -30,6 +30,13 @@
         .auto-style16 {
             height: 34px;
         }
+        .auto-style17 {
+            height: 34px;
+            width: 260px;
+        }
+        .auto-style18 {
+            width: 260px;
+        }
         </style>
 </asp:Content>
 
@@ -163,7 +170,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="pnlChange" runat="server">
         <table class="auto-style1">
             <tr>
-                <td class="auto-style16">Username:</td>
+                <td class="auto-style17">Username:</td>
                 <td class="auto-style16">
                     <asp:TextBox ID="txtChangeUsername" runat="server" style="margin-bottom: 0px"></asp:TextBox>
                 </td>
@@ -172,7 +179,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Current Password:</td>
+                <td class="auto-style18">Current Password:</td>
                 <td class="auto-style3">
                     <asp:TextBox ID="txtCurrentPassword" runat="server" style="margin-bottom: 0px"></asp:TextBox>
                 </td>
@@ -181,18 +188,18 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">New Password:</td>
+                <td class="auto-style18">New Password:</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtNewPassword" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+                    <asp:TextBox ID="txtNewPassword" runat="server" style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtNewPassword" ErrorMessage="Required"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">Confirm New Password:</td>
+                <td class="auto-style18">Confirm New Password:</td>
                 <td class="auto-style3">
-                    <asp:TextBox ID="txtConfirmNew" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+                    <asp:TextBox ID="txtConfirmNew" runat="server" style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtConfirmNew" Display="Dynamic" ErrorMessage="Required"></asp:RequiredFieldValidator>
@@ -200,7 +207,7 @@
                 </td>
             </tr>
             <tr>
-                <td class="auto-style2">&nbsp;</td>
+                <td class="auto-style18">&nbsp;</td>
                 <td class="auto-style3">
                     <asp:Button ID="btnChange" runat="server" OnClick="btnChange_Click" Text="Change Password" />
                 </td>
@@ -208,7 +215,7 @@
             </tr>
         </table>
         </asp:Panel>
-    &nbsp;<asp:Label ID="lblChanged" runat="server" Text="Label" Visible="False"></asp:Label>
-    <br />
+    &nbsp;<br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lblChanged" runat="server" Text="Label" Visible="False"></asp:Label>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 </asp:Content>
