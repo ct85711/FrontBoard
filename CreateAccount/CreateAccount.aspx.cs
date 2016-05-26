@@ -89,15 +89,30 @@ public partial class CreateAccount : System.Web.UI.Page
     }
     protected void btnChange_Click(object sender, EventArgs e)
     {
-        Customer oldPass = FrontBoardDA.GetCustomerByUsername(txtUsername.Text);
+        Customer oldPass = FrontBoardDA.GetCustomerByUsername(txtChangeUsername.Text);
         if (oldPass != null)
         {
             if (oldPass.Password.Equals(txtCurrentPassword.Text))
             {
-                oldPass.Password = txtConfirmPassword.Text;
+                oldPass.Password = txtConfirmNew.Text;
                 FrontBoardDA.UpdateCustomer(oldPass);
                 lblChanged.Text = "Changed Password!";
+                lblChanged.Visible = true;
+                txtChangeUsername.Text = " ";
+                txtConfirmNew.Text = " ";
+                txtCurrentPassword.Text = " ";
+                txtNewPassword.Text = " ";
             }
+            else
+            {
+                lblChanged.Visible = true;
+                lblChanged.Text = "Password Not changed. Double check your Password entry.";
+            }
+        }
+        else
+        {
+            lblChanged.Visible = true;
+            lblChanged.Text = "Username not found in database";
         }
     }
 } // End of class
