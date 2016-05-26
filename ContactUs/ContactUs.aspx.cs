@@ -39,5 +39,10 @@ public partial class ContactUs_ContactUs : System.Web.UI.Page
         Question question = new Question(txtFirstName.Text, txtLastName.Text, txtEmail.Text, txtBox.Text.Trim());
 
         FrontBoardDA.InsertQuestion(question);
+
+        txtFirstName.Text = string.Empty;
+        txtLastName.Text = string.Empty;
+        txtEmail.Text = string.Empty;
+        txtBox.Text = string.Empty;
     }
 }
