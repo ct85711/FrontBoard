@@ -15,12 +15,12 @@ public partial class CreateAccount : System.Web.UI.Page
             lblPassword.Visible = true;
             pnlChange.Visible = true;
             lblCreateAccount.Visible = false;
-            pnlCreate.Visible = false;
+            FormView1.Visible = false;
         }
         else
         {
             lblCreateAccount.Visible = true;
-            pnlCreate.Visible = true;
+            FormView1.Visible = true;
             lblChanged.Visible = false;
             lblPassword.Visible = false;
             pnlChange.Visible = false;

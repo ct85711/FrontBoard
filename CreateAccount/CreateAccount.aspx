@@ -46,6 +46,7 @@
     <br />
 &nbsp;
     <br />
+    <asp:Label ID="lblPassword" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Change Password"></asp:Label>
     <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource1" DefaultMode="Insert">
         <InsertItemTemplate>
             <table class="auto-style1">
@@ -168,6 +169,57 @@
         </InsertItemTemplate>
        
     </asp:FormView>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Panel ID="pnlChange" runat="server">
+         <table class="auto-style1">
+             <tr>
+                 <td class="auto-style17">Username:</td>
+                 <td class="auto-style16">
+                     <asp:TextBox ID="txtChangeUsername" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+                 </td>
+                 <td class="auto-style16">
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtChangeUsername" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="auto-style18">Current Password:</td>
+                 <td class="auto-style3">
+                     <asp:TextBox ID="txtCurrentPassword" runat="server" style="margin-bottom: 0px"></asp:TextBox>
+                 </td>
+                 <td>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtCurrentPassword" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="auto-style18">New Password:</td>
+                 <td class="auto-style3">
+                     <asp:TextBox ID="txtNewPassword" runat="server" style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
+                 </td>
+                 <td>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtNewPassword" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="auto-style18">Confirm New Password:</td>
+                 <td class="auto-style3">
+                     <asp:TextBox ID="txtConfirmNew" runat="server" style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
+                 </td>
+                 <td>
+                     <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtConfirmNew" Display="Dynamic" ErrorMessage="Required"></asp:RequiredFieldValidator>
+                     <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtConfirmNew" ErrorMessage="Passwords Don't Match"></asp:CompareValidator>
+                 </td>
+             </tr>
+             <tr>
+                 <td class="auto-style18">&nbsp;</td>
+                 <td class="auto-style3">
+                     <asp:Button ID="btnChange" runat="server" OnClick="btnChange_Click" Text="Change Password" />
+                 </td>
+                 <td>&nbsp;</td>
+             </tr>
+         </table>
+         </asp:Panel>
+     &nbsp;<br />
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <asp:Label ID="lblChanged" runat="server" Text="Label" Visible="False"></asp:Label>
+ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 <%--    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Customer" InsertMethod="InsertCustomer" OldValuesParameterFormatString="original_{0}" SelectMethod="GetCustomers" TypeName="FrontBoardDA"></asp:ObjectDataSource>--%>
         <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Customer" InsertMethod="InsertCustomer" OldValuesParameterFormatString="original_{0}" TypeName="FrontBoardDA"></asp:ObjectDataSource>
 
