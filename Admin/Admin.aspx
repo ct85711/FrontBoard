@@ -136,7 +136,7 @@
     </asp:ListView>
     <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [OrderId], [ItemId], [UserId], [OrderDate] FROM [Invoice]"></asp:SqlDataSource>
 
-    <asp:DataList ID="DataList1" runat="server" DataSourceID="SqlDataSource2" Visible="False">
+    <asp:DataList ID="DataList1" runat="server" SkinID="DataListSkin" CssClass="listView" DataSourceID="SqlDataSource2" Visible="False" GridLines="Both">
         <ItemTemplate>
             FirstName:
         <asp:Label ID="FirstNameLabel" runat="server" Text='<%# Eval("FirstName") %>' />
@@ -155,7 +155,7 @@
     </asp:DataList>
     <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [FirstName], [LastName], [Email], [Question] FROM [Questions]"></asp:SqlDataSource>
 
-    <asp:GridView ID="GridView1" runat="server" CssClass="GridView" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="5" Visible="False">
+    <asp:GridView ID="GridView1" runat="server" CssClass="GridView" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" CellPadding="5" Visible="False" HorizontalAlign="Center">
         <Columns>
             <asp:BoundField DataField="FirstName" HeaderText="FirstName" SortExpression="FirstName" />
             <asp:BoundField DataField="LastName" HeaderText="LastName" SortExpression="LastName" />
