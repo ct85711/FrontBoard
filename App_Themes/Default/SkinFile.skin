@@ -18,3 +18,6 @@ Default Theme skin template. The following skins are provided as examples only.
     <ItemStyle BackColor="#E3EAEB"/>
     <AlternatingItemStyle BackColor="#DCDCDC"/>
 </asp:DataList>
+
+<asp:button runat="server" BackColor="#FFDCDCDC" ForeColor="Black"/>
+    
