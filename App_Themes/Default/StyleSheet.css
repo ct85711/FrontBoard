@@ -83,11 +83,11 @@ th {
 }
 
 .trEven {
-    background-color:#E3EAEB;
+    background-color: #E3EAEB;
 }
 
 .trOdd {
-    background-color:#DCDCDC;
+    background-color: #DCDCDC;
 }
 
 .tr:nth-child(even) {
@@ -98,4 +98,10 @@ th {
     background-color: #DCDCDC;
 }
 
+table.GridView tr:nth-child(even) {
+    background-color: #E3EAEB;
+}
 
+table.GridView tr:nth-child(odd) {
+    background-color: #DCDCDC;
+}
