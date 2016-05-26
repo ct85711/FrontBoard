@@ -42,46 +42,46 @@ public partial class CreateAccount : System.Web.UI.Page
         }
     }
 
-    protected void btnCreateAccount_Click(object sender, EventArgs e)
-    {
-        string firstName = txtFirstName.Text;
-        string lastName = txtLastName.Text;
-        string address = txtAddress.Text;
-        string city = txtCity.Text;
-        string state = txtState.Text;
-        string zipcode = txtZip.Text;
-        string phone = txtPhone.Text;
-        string email = txtEmail.Text;
-        string username = txtUsername.Text;
-        string password = txtPassword.Text;
+    //protected void btnCreateAccount_Click(object sender, EventArgs e)
+    //{
+    //    string firstName = FormView1.Controls;
+    //    string lastName = LastNameTextBox.Text;
+    //    string address = txtAddress.Text;
+    //    string city = txtCity.Text;
+    //    string state = txtState.Text;
+    //    string zipcode = txtZip.Text;
+    //    string phone = txtPhone.Text;
+    //    string email = txtEmail.Text;
+    //    string username = txtUsername.Text;
+    //    string password = txtPassword.Text;
 
-        try
-        {
-            var cust = FrontBoardDA.GetCustomerByUsername(username);
+    //    try
+    //    {
+    //        var cust = FrontBoardDA.GetCustomerByUsername(username);
 
-            if (cust == null)
-            {
-                lblErrorMessage.Text = string.Empty;
+    //        if (cust == null)
+    //        {
+    //            lblErrorMessage.Text = string.Empty;
 
-                Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
+    //            Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
 
-                FrontBoardDA.InsertCustomer(newCustomer);
+    //            FrontBoardDA.InsertCustomer(newCustomer);
 
-                // TODO - Create a Customer in the Database
-                Session["createAccount"] = newCustomer;
+    //            // TODO - Create a Customer in the Database
+    //            Session["createAccount"] = newCustomer;
 
-                Server.Transfer("~/Default.aspx");
-            }
-            else
-            {
-                lblErrorMessage.Text = "That username already exists. Please choose a different one.";
-            }
-        }
-        catch (Exception ex)
-        {
-            lblErrorMessage.Text = "Sorry, there was an error connecting to the database. Try again later.";
-        }
-    }
+    //            Server.Transfer("~/Default.aspx");
+    //        }
+    //        else
+    //        {
+    //            lblErrorMessage.Text = "That username already exists. Please choose a different one.";
+    //        }
+    //    }
+    //    catch (Exception ex)
+    //    {
+    //        lblErrorMessage.Text = "Sorry, there was an error connecting to the database. Try again later.";
+    //    }
+    //}
 
     protected void btnChangePasswod_Click(object sender, EventArgs e)
     {

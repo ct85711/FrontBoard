@@ -11,6 +11,7 @@ using System.ComponentModel;
 /// <summary>
 /// Summary description for FrontBoardDA
 /// </summary>
+
 [DataObject(true)]
 public static class FrontBoardDA
 {
@@ -70,6 +71,7 @@ public static class FrontBoardDA
         }
     }
 
+    [DataObjectMethod(DataObjectMethodType.Select)]
     public static Customer GetCustomerByUsername(string username)
     {
         string query = "SELECT * FROM CUSTOMER WHERE username = '" + username +"'";
@@ -116,6 +118,7 @@ public static class FrontBoardDA
         return customer;
     }
 
+    [DataObjectMethod(DataObjectMethodType.Select)]
     public static Customer GetCustomerById(int userID)
     {
         string query = "SELECT * FROM CUSTOMER WHERE ID = " + userID;
@@ -163,7 +166,7 @@ public static class FrontBoardDA
     }
 
     //this method gets all of the customers in the database and returns a list collection of all of them
-   [DataObjectMethod(DataObjectMethodType.Select)]
+    [DataObjectMethod(DataObjectMethodType.Select)]
     public static List<Customer> GetCustomers()
     {
         List<Customer> customers = new List<Customer>();
