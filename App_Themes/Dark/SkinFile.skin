@@ -18,3 +18,6 @@ Dark Theme skin template. The following skins are provided as examples only.
     <ItemStyle />
     <AlternatingItemStyle />
 </asp:DataList>
+
+<asp:button runat="server" BackColor="#8CBAE8" ForeColor="#000000"/>
+<asp:label runat="server" ForeColor="white" />

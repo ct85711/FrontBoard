@@ -1,7 +1,7 @@
 ﻿/* Dark Theme */
 
 ﻿body {
-    background-color: black;
+    background-color: #191919;
 }
 
 #wrapper {
@@ -22,7 +22,7 @@ nav {
     border-style: solid;
     border-width: thin;
     padding: 15px 5px 5px 15px;
-    background-color: #C0C0C0;
+    background-color: #262626;
 }
 
 #login {
@@ -44,9 +44,10 @@ footer {
     border-width: thin;
     height: 150px;
     text-align: center;
-    background-color: #C0C0C0;
+    background-color: #262626;
     background-image: url('Images/');
     font-family: 'Harlow Solid';
+    color: white;
 }
 
 section {
