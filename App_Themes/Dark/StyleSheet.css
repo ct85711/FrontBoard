@@ -66,10 +66,6 @@ section {
     margin-right: 15px;
 }
 
-.table {
-    margin-left: 50px;
-}
-
 th {
     background-color: #CBCBCB;
     color: #000000;
@@ -80,6 +76,10 @@ th {
 tr {
     background-color:#FFFFFF;
     color:#000000;
+}
+
+.table {
+    margin-left: 50px;
 }
 
 .th {

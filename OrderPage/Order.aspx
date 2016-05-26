@@ -25,7 +25,7 @@
     <br />
     &nbsp;
     <br />
-    <asp:Table ID="Table1" CssClass="table" runat="server" BorderWidth="1px" GridLines="Both">
+    <asp:Table ID="Table1" runat="server" BorderWidth="1px" GridLines="Both" CellPadding="15" CssClass="table">
     </asp:Table>
     <br />
     <br />
