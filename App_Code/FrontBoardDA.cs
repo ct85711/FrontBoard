@@ -413,7 +413,7 @@ public static class FrontBoardDA
 
     public static void UpdateItem(Item aItem)
     {
-        string upd = "update customer set"
+        string upd = "update Products set"
         + "supplierId = @supplierId"
         + "artName = @artName"
         + "artType = @artType"

@@ -9,6 +9,7 @@
     &nbsp;
     <asp:Button ID="btnQuestions" runat="server" Text="Customer Questions" Width="139px" OnClick="btnQuestions_Click" Visible="False" />
     &nbsp;<asp:Button ID="btnOrders" runat="server" OnClick="btnOrders_Click" Text="Orders" Visible="False" Width="149px" />
+    &nbsp;<asp:Button ID="btnProducts" runat="server" OnClick="btnProducts_Click" Text="Products" Visible="False" Width="150px" />
     <br />
     <br />
 
@@ -170,5 +171,47 @@
         </Columns>
     </asp:GridView>
     <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT [FirstName], [LastName], [Address], [City], [State], [Zip], [Phone], [EmailAddress], [UserName], [Password] FROM [Customer]"></asp:SqlDataSource>
+    <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" DataKeyNames="artId" DataSourceID="SqlDataSource4" ForeColor="#333333" GridLines="None" Height="50px" Visible="False" Width="350px">
+        <AlternatingRowStyle BackColor="White" />
+        <CommandRowStyle BackColor="#C5BBAF" Font-Bold="True" />
+        <EditRowStyle BackColor="#7C6F57" />
+        <FieldHeaderStyle BackColor="#D0D0D0" Font-Bold="True" />
+        <Fields>
+            <asp:BoundField DataField="artId" HeaderText="artId" InsertVisible="False" ReadOnly="True" SortExpression="artId" />
+            <asp:BoundField DataField="supplierId" HeaderText="supplierId" SortExpression="supplierId" />
+            <asp:BoundField DataField="artName" HeaderText="artName" SortExpression="artName" />
+            <asp:BoundField DataField="artType" HeaderText="artType" SortExpression="artType" />
+            <asp:BoundField DataField="price" HeaderText="price" SortExpression="price" />
+            <asp:BoundField DataField="descript" HeaderText="descript" SortExpression="descript" />
+            <asp:BoundField DataField="imageFile" HeaderText="imageFile" SortExpression="imageFile" />
+            <asp:CommandField ShowDeleteButton="True" ShowEditButton="True" ShowInsertButton="True" />
+        </Fields>
+        <FooterStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <HeaderStyle BackColor="#1C5E55" Font-Bold="True" ForeColor="White" />
+        <PagerStyle BackColor="#666666" ForeColor="White" HorizontalAlign="Center" />
+        <RowStyle BackColor="#E3EAEB" />
+    </asp:DetailsView>
+    <asp:SqlDataSource ID="SqlDataSource4" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Products]" DeleteCommand="DELETE FROM [Products] WHERE [artId] = @artId" InsertCommand="INSERT INTO [Products] ([supplierId], [artName], [artType], [price], [descript], [imageFile]) VALUES (@supplierId, @artName, @artType, @price, @descript, @imageFile)" UpdateCommand="UPDATE [Products] SET [supplierId] = @supplierId, [artName] = @artName, [artType] = @artType, [price] = @price, [descript] = @descript, [imageFile] = @imageFile WHERE [artId] = @artId">
+        <DeleteParameters>
+            <asp:Parameter Name="artId" Type="Int32" />
+        </DeleteParameters>
+        <InsertParameters>
+            <asp:Parameter Name="supplierId" Type="Int32" />
+            <asp:Parameter Name="artName" Type="String" />
+            <asp:Parameter Name="artType" Type="String" />
+            <asp:Parameter Name="price" Type="Decimal" />
+            <asp:Parameter Name="descript" Type="String" />
+            <asp:Parameter Name="imageFile" Type="String" />
+        </InsertParameters>
+        <UpdateParameters>
+            <asp:Parameter Name="supplierId" Type="Int32" />
+            <asp:Parameter Name="artName" Type="String" />
+            <asp:Parameter Name="artType" Type="String" />
+            <asp:Parameter Name="price" Type="Decimal" />
+            <asp:Parameter Name="descript" Type="String" />
+            <asp:Parameter Name="imageFile" Type="String" />
+            <asp:Parameter Name="artId" Type="Int32" />
+        </UpdateParameters>
+    </asp:SqlDataSource>
 </asp:Content>
 
