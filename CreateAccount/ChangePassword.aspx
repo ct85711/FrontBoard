@@ -6,7 +6,7 @@
             width: 93%;
         }
         .auto-style2 {
-            width: 158px;
+            width: 188px;
         }
         .auto-style3 {
             width: 142px;
@@ -54,7 +54,9 @@
         </tr>
         <tr>
             <td class="auto-style2">&nbsp;</td>
-            <td class="auto-style3">&nbsp;</td>
+            <td class="auto-style3">
+                <asp:Button ID="btnChange" runat="server" OnClick="btnChange_Click" Text="Change Password" />
+            </td>
             <td>&nbsp;</td>
         </tr>
     </table>

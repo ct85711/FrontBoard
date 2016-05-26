@@ -2,7 +2,7 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
     <siteMapNode url="" title="Home"  description="asdf">
         <siteMapNode url="~/Default.aspx" title="Home"  description="Home Page" />
-        <siteMapNode url="~/CreateAccount/CreateAccount.aspx" title="Create"  description="Create Account" />
+        <siteMapNode url="~/CreateAccount/CreateAccount.aspx" title="Account"  description="Create Account" />
         <siteMapNode url="~/OrderPage/Order.aspx" title="Order"  description="Order Products" />
         <siteMapNode url="~/Admin/Admin.aspx" title="Admin"  description="Admin Tools - Admins Only" />
         <siteMapNode url="~/AboutUs/AboutUs.aspx" title="About Us"  description="A short description about River City Art Gallery">

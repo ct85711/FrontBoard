@@ -11,4 +11,16 @@ public partial class CreateAccount_ChangePassword : System.Web.UI.Page
     {
 
     }
+    protected void btnChange_Click(object sender, EventArgs e)
+    {
+        Customer oldPass = FrontBoardDA.GetCustomerByUsername(txtUsername.Text);
+        if (oldPass != null)
+        {
+            if (oldPass.Password.Equals(txtCurrentPassword.Text))
+            {
+                oldPass.Password = txtConfirmPassword.Text;
+                FrontBoardDA.UpdateCustomer(oldPass);
+            }
+        }
+    }
 }
