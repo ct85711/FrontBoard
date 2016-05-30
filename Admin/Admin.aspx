@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceholder" runat="Server">
-    <asp:Label ID="lblMsg" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="lblMsg" runat="server" Text="Label" ForeColor="#990000"></asp:Label>
     <br />
     <asp:Button ID="btnCustomers" runat="server" OnClick="btnCustomers_Click" Text="Customer List" Visible="False" Width="121px" />
     &nbsp;

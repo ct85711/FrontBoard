@@ -90,7 +90,7 @@
                 <asp:Button ID="btnCreateAccount" runat="server" OnClick="btnCreateAccount_Click" Text="Send Question" Width="158px" />
             </td>
             <td class="hidden">
-                <asp:Label ID="lblErrorMessage" runat="server" ForeColor="#CC0000"></asp:Label>
+                <asp:Label ID="lblErrorMessage" runat="server" ForeColor="#990000"></asp:Label>
             </td>
         </tr>
     </table>

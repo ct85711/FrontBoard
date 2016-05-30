@@ -21,7 +21,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceholder" runat="Server">
-    <asp:Label ID="lblLogin" runat="server" Text="You Must Create an Account to Order Items." ForeColor="Red"></asp:Label>
+    <asp:Label ID="lblLogin" runat="server" Text="You Must Create an Account to Order Items." ForeColor="#990000"></asp:Label>
     <h2>Order some art</h2>
     <asp:Table ID="Table1" runat="server" BorderWidth="1px" GridLines="Both" CellPadding="15" CssClass="table">
     </asp:Table>

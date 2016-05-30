@@ -182,7 +182,7 @@
                     <asp:TextBox ID="txtChangeUsername" runat="server" Style="margin-bottom: 0px"></asp:TextBox>
                 </td>
                 <td class="hidden">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtChangeUsername" ErrorMessage="Required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator12" runat="server" ControlToValidate="txtChangeUsername" ErrorMessage="Required" ForeColor="#990000"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -191,7 +191,7 @@
                     <asp:TextBox ID="txtCurrentPassword" runat="server" Style="margin-bottom: 0px"></asp:TextBox>
                 </td>
                 <td class="hidden">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtCurrentPassword" ErrorMessage="Required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator13" runat="server" ControlToValidate="txtCurrentPassword" ErrorMessage="Required" ForeColor="#990000"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -200,7 +200,7 @@
                     <asp:TextBox ID="txtNewPassword" runat="server" Style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
                 </td>
                 <td class="hidden">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtNewPassword" ErrorMessage="Required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator14" runat="server" ControlToValidate="txtNewPassword" ErrorMessage="Required" ForeColor="#990000"></asp:RequiredFieldValidator>
                 </td>
             </tr>
             <tr>
@@ -209,8 +209,8 @@
                     <asp:TextBox ID="txtConfirmNew" runat="server" Style="margin-bottom: 0px" TextMode="Password"></asp:TextBox>
                 </td>
                 <td class="hidden">
-                    <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtConfirmNew" Display="Dynamic" ErrorMessage="Required" ForeColor="#CC0000"></asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtConfirmNew" ErrorMessage="Passwords Don't Match" ForeColor="#CC0000"></asp:CompareValidator>
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtConfirmNew" Display="Dynamic" ErrorMessage="Required" ForeColor="#990000"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtConfirmNew" ErrorMessage="Passwords Don't Match" ForeColor="#990000"></asp:CompareValidator>
                 </td>
             </tr>
             <tr>
