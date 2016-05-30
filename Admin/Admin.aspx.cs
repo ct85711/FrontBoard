@@ -31,7 +31,7 @@ public partial class Admin_Admin : System.Web.UI.Page
             meta.HttpEquiv = "refresh";
             meta.Content = "5;url=../Default.aspx";
             this.Page.Controls.Add(meta);
-            lblMsg.Text = "You must login before accessing this page. Redirecting you in 5 seconds";
+            lblMsg.Text = "You must login before accessing this page. Redirecting you in 5 seconds.";
             btnQuestions.Visible = false;
         }
         else
