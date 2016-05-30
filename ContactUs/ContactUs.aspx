@@ -4,6 +4,7 @@
     <style type="text/css">
         .auto-style1 {
             height: 25px;
+            border-collapse:collapse;
         }
         .auto-style2 {
             height: 131px;

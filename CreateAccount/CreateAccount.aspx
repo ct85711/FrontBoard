@@ -8,35 +8,25 @@
 
         .auto-style7 {
             width: 127px;
-            height: 80px;
-        }
-
-        .auto-style8 {
-            height: 80px;
         }
 
         .auto-style12 {
-            height: 80px;
             width: 199px;
         }
 
         .auto-style13 {
             width: 127px;
-            height: 30px;
         }
 
         .auto-style14 {
             width: 199px;
-            height: 30px;
         }
 
         .auto-style16 {
-            height: 34px;
             width: 159px;
         }
 
         .auto-style17 {
-            height: 34px;
             width: 168px;
         }
 
@@ -47,10 +37,6 @@
         .auto-style20 {
             width: 168px;
         }
-
-        .auto-style21 {
-            height: 34px;
-        }
     </style>
 </asp:Content>
 
@@ -58,10 +44,8 @@
     <asp:Label ID="lblCreateAccount" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Create an Account"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <br />
-    &nbsp;
-    <br />
     <asp:Label ID="lblPassword" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Change Password"></asp:Label>
-
+    <br />
     <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource1" DefaultMode="Insert" CellPadding="4" ForeColor="#333333">
         <EditRowStyle BackColor="transparent" CssClass="validator" />
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
@@ -243,7 +227,6 @@
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     <asp:Label ID="lblChanged" runat="server" Text="Label" Visible="False"></asp:Label>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    <%--    <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Customer" InsertMethod="InsertCustomer" OldValuesParameterFormatString="original_{0}" SelectMethod="GetCustomers" TypeName="FrontBoardDA"></asp:ObjectDataSource>--%>
     <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" DataObjectTypeName="Customer" InsertMethod="InsertCustomer" OldValuesParameterFormatString="original_{0}" TypeName="FrontBoardDA"></asp:ObjectDataSource>
 
 </asp:Content>
