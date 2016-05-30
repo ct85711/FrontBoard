@@ -94,7 +94,7 @@
         <LayoutTemplate>
             <table runat="server">
                 <tr runat="server">
-                    <td runat="server" class="validator">
+                    <td runat="server" class="hidden">
                         <table id="itemPlaceholderContainer" runat="server" border="1" style="border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
                             <tr runat="server">
                                 <th runat="server">OrderId</th>
@@ -108,7 +108,7 @@
                     </td>
                 </tr>
                 <tr runat="server">
-                    <td runat="server" class="validator" style="text-align: center; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000;">
+                    <td runat="server" class="hidden" style="text-align: center; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000;">
                         <asp:DataPager ID="DataPager1" runat="server">
                             <Fields>
                                 <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />

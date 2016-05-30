@@ -52,7 +52,7 @@
             <td class="auto-style7">
                 <asp:TextBox ID="txtFirstName" runat="server" Width="200px"></asp:TextBox>
             </td>
-            <td class="validator">
+            <td class="hidden">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txtFirstName" ErrorMessage="First name is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -61,7 +61,7 @@
             <td class="auto-style7">
                 <asp:TextBox ID="txtLastName" runat="server" Width="200px"></asp:TextBox>
             </td>
-            <td class="validator">
+            <td class="hidden">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtLastName" ErrorMessage="Last name is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -70,7 +70,7 @@
             <td class="auto-style9">
                 <asp:TextBox ID="txtEmail" runat="server" Width="200px"></asp:TextBox>
             </td>
-            <td class="validator">
+            <td class="hidden">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator8" runat="server" ControlToValidate="txtEmail" ErrorMessage="Email address is required" ForeColor="#990000" Display="Dynamic"></asp:RequiredFieldValidator>
                 <asp:RegularExpressionValidator ID="RegularExpressionValidator2" runat="server" ControlToValidate="txtEmail" Display="Dynamic" ErrorMessage="Must be a valid email address" ForeColor="#990000" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"></asp:RegularExpressionValidator>
             </td>
@@ -80,7 +80,7 @@
             <td class="auto-style2">
                 <asp:TextBox ID="txtBox" runat="server" Height="109px" TextMode="MultiLine" Width="200px"></asp:TextBox>
             </td>
-            <td class="validator">
+            <td class="hidden">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtBox" ErrorMessage="Please Enter A Message" ForeColor="#990000"></asp:RequiredFieldValidator>
             </td>
         </tr>
@@ -89,7 +89,7 @@
             <td class="auto-style7">
                 <asp:Button ID="btnCreateAccount" runat="server" OnClick="btnCreateAccount_Click" Text="Send Question" Width="158px" />
             </td>
-            <td class="validator">
+            <td class="hidden">
                 <asp:Label ID="lblErrorMessage" runat="server" ForeColor="#CC0000"></asp:Label>
             </td>
         </tr>
