@@ -21,3 +21,21 @@ Dark Theme skin template. The following skins are provided as examples only.
 
 <asp:button runat="server" BackColor="#8CBAE8" ForeColor="#000000"/>
 <asp:label runat="server" ForeColor="white" />
+
+<asp:TreeView 
+     runat="server"
+     ImageSet="Arrows"
+     BackColor=""
+     ForeColor="#FFFFFF"
+     BorderWidth="1"
+     BorderColor="#FFFFFF"
+     Width="180"
+     Height="220"
+     >
+
+     <HoverNodeStyle 
+        BackColor="#8CBAE8" 
+        ForeColor="" 
+        Font-Size="X-Large" 
+        />
+</asp:TreeView>

@@ -27,3 +27,23 @@ Default Theme skin template. The following skins are provided as examples only.
         <EditRowStyle BackColor="#DCDCDC" />
         <FieldHeaderStyle BackColor="#D0D0D0" />
     </asp:DetailsView>
+
+<asp:TreeView 
+     runat="server"
+     ImageSet="Arrows"
+     BackColor="#DCDCDC"
+     ForeColor="#000000"
+     BorderWidth="1"
+     BorderColor="#000000"
+     Width="180"
+     Height="220"
+     >
+
+     <HoverNodeStyle 
+        BackColor="#E3EAEB" 
+        ForeColor="" 
+        Font-Size="X-Large" 
+        />
+</asp:TreeView>
+
+        

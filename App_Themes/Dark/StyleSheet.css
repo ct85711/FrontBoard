@@ -84,4 +84,7 @@ th {
     text-align: center;
 }
 
-
+.validator {
+    background-color: #000000;
+    color: #FFFFFF;
+}

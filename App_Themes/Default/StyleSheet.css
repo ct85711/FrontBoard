@@ -1,7 +1,6 @@
 ﻿/* Default Theme */
 
 ﻿body {
-  
 }
 
 #wrapper {
@@ -81,26 +80,14 @@ th {
     text-align: center;
 }
 
-.trEven {
+tr:nth-child(even) {
     background-color: #E3EAEB;
 }
 
-.trOdd {
+tr:nth-child(odd) {
     background-color: #DCDCDC;
 }
 
-.tr:nth-child(even) {
-    background-color: #E3EAEB;
-}
-
-.tr:nth-child(odd) {
-    background-color: #DCDCDC;
-}
-
-table.GridView tr:nth-child(even) {
-    background-color: #E3EAEB;
-}
-
-table.GridView tr:nth-child(odd) {
-    background-color: #DCDCDC;
+.validator {
+    background-color: #FFFFFF;
 }

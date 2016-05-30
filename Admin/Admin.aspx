@@ -15,7 +15,7 @@
 
     <asp:ListView ID="ListView1" runat="server" DataKeyNames="OrderId" DataSourceID="SqlDataSource3" Visible="False">
         <AlternatingItemTemplate>
-            <tr class="trOdd">
+            <tr>
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -76,7 +76,7 @@
             </tr>
         </InsertItemTemplate>
         <ItemTemplate>
-            <tr class="trEven">
+            <tr>
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -94,9 +94,9 @@
         <LayoutTemplate>
             <table runat="server">
                 <tr runat="server">
-                    <td runat="server">
+                    <td runat="server" class="validator">
                         <table id="itemPlaceholderContainer" runat="server" border="1" style="border-collapse: collapse; border-color: #999999; border-style: none; border-width: 1px;">
-                            <tr runat="server" style="background-color: #DCDCDC; color: #000000;">
+                            <tr runat="server">
                                 <th runat="server">OrderId</th>
                                 <th runat="server">ItemId</th>
                                 <th runat="server">UserId</th>
@@ -108,7 +108,7 @@
                     </td>
                 </tr>
                 <tr runat="server">
-                    <td runat="server" style="text-align: center; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000;">
+                    <td runat="server" class="validator" style="text-align: center; font-family: Verdana, Arial, Helvetica, sans-serif; color: #000000;">
                         <asp:DataPager ID="DataPager1" runat="server">
                             <Fields>
                                 <asp:NextPreviousPagerField ButtonType="Button" ShowFirstPageButton="True" ShowLastPageButton="True" />
@@ -119,7 +119,7 @@
             </table>
         </LayoutTemplate>
         <SelectedItemTemplate>
-            <tr style="background-color: #008A8C; font-weight: bold; color: #FFFFFF;">
+            <tr>
                 <td>
                     <asp:Label ID="OrderIdLabel" runat="server" Text='<%# Eval("OrderId") %>' />
                 </td>
@@ -223,10 +223,10 @@
         </UpdateParameters>
     </asp:SqlDataSource>
 
-    <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" DataKeyNames="artId" DataSourceID="SqlDataSource4" GridLines="None" Height="50px" Visible="False" Width="350px">
+    <asp:DetailsView ID="DetailsView1" runat="server" CssClass="table" AllowPaging="True" AutoGenerateRows="False" BorderStyle="Solid" BorderWidth="1px" CellPadding="4" DataKeyNames="artId" DataSourceID="SqlDataSource4" GridLines="None" Height="50px" Visible="False" Width="350px">
         <AlternatingRowStyle />
         <CommandRowStyle Font-Bold="True" />
-        <EditRowStyle  />
+        <EditRowStyle />
         <FieldHeaderStyle Font-Bold="True" />
         <Fields>
             <asp:BoundField DataField="artId" HeaderText="artId" InsertVisible="False" ReadOnly="True" SortExpression="artId" />
@@ -265,6 +265,6 @@
             <asp:Parameter Name="imageFile" Type="String" />
             <asp:Parameter Name="artId" Type="Int32" />
         </UpdateParameters>
-    </asp:SqlDataSource>    
+    </asp:SqlDataSource>
 </asp:Content>
 
