@@ -5,6 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>RIVER CITY ART CENTER</title>
+    <link rel="icon" href="Images/favicon.ico" type="image/x-icon" />
     <link href="StyleSheet.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>

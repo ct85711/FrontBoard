@@ -73,4 +73,15 @@ tr:nth-child(odd) {
 
 .hidden {
     background-color: #FFFFFF;
+    border-left:solid #000000 1px;
+    border-top: solid #FFFFFF 1px;    
+    border-bottom: solid #FFFFFF 1px;
 }
+
+.hidden2 {
+    background-color: #FFFFFF;
+    border-left:solid #FFFFFF 1px;
+    border-top: solid #FFFFFF 1px;    
+    border-bottom: solid #FFFFFF 1px;
+}
+

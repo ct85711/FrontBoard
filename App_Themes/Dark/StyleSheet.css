@@ -67,7 +67,24 @@ section {
     margin-right: 15px;
 }
 
+table {
+    color:#FFFFFF;
+    border-left: solid #FFFFFF 1px;
+    border-top: solid #FFFFFF 1px;    
+    border-bottom: solid #FFFFFF 1px;
+}
+
 .hidden {
     background-color: #000000;
     color: #FFFFFF;
+    border-left:solid #FFFFFF 1px;
+    border-top: solid #000000 1px;    
+    border-bottom: solid #000000 1px;
+}
+
+.hidden2 {
+    background-color: #000000;
+    border-left:solid #000000 1px;
+    border-top: solid #000000 1px;    
+    border-bottom: solid #000000 1px;
 }

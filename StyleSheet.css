@@ -66,6 +66,9 @@ section {
 table {
     margin-left: 15px;
     border-collapse:collapse;
+    border-left: solid #000000 1px;
+    border-top: solid #000000 1px;    
+    border-bottom: solid #000000 1px;
 }
 
 th {

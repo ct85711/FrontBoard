@@ -47,11 +47,11 @@
     <asp:Label ID="lblPassword" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Change Password"></asp:Label>
     <br />
     <asp:FormView ID="FormView1" runat="server" DataSourceID="ObjectDataSource1" DefaultMode="Insert" CellPadding="4" ForeColor="#333333">
-        <EditRowStyle BackColor="transparent" CssClass=".hidden" />
+        <EditRowStyle BackColor="transparent" CssClass="hidden2"/>
         <FooterStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <HeaderStyle BackColor="#507CD1" Font-Bold="True" ForeColor="White" />
         <InsertItemTemplate>
-            <table class="hidden">
+            <table>
                 <tr>
                     <td class="auto-style13">First Name:</td>
                     <td class="auto-style14">
