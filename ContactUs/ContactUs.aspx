@@ -82,7 +82,7 @@
                 <asp:TextBox ID="txtBox" runat="server" Height="109px" TextMode="MultiLine" Width="200px"></asp:TextBox>
             </td>
             <td class="hidden">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtBox" ErrorMessage="Please Enter A Message" ForeColor="#990000"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator9" runat="server" ControlToValidate="txtBox" ErrorMessage="Please enter a message" ForeColor="#990000"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>

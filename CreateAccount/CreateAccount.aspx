@@ -210,7 +210,7 @@
                 </td>
                 <td class="hidden">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator15" runat="server" ControlToValidate="txtConfirmNew" Display="Dynamic" ErrorMessage="Required" ForeColor="#990000"></asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtConfirmNew" ErrorMessage="Passwords Don't Match" ForeColor="#990000"></asp:CompareValidator>
+                    <asp:CompareValidator ID="CompareValidator2" runat="server" ControlToCompare="txtNewPassword" ControlToValidate="txtConfirmNew" ErrorMessage="Passwords don't match" ForeColor="#990000"></asp:CompareValidator>
                 </td>
             </tr>
             <tr>
