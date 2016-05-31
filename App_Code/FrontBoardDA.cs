@@ -292,7 +292,7 @@ public static class FrontBoardDA
     {
         string ins = "insert into Products (supplierId, artName, artType, price, descript, imageFile) values "
             + "(@supplierId, @artName, @artType, @price, @descript, @imageFile)";
-        string getID = "Select artId from Products order by artId desc limit 1";
+        string getID = "Select max(artId) from Products";
         SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
         SqlCommand insCmd = new SqlCommand(ins, dbCon);
         SqlCommand getCmd = new SqlCommand(getID, dbCon);
@@ -304,20 +304,20 @@ public static class FrontBoardDA
         insCmd.Parameters.AddWithValue("descript", newItem.description);
         insCmd.Parameters.AddWithValue("imageFile", newItem.imageFile);
 
-        try
-        {
+    //    try
+    //    {
             dbCon.Open();
             insCmd.ExecuteNonQuery();
             newItem.artId = (int)getCmd.ExecuteScalar();
-        }
-        catch (Exception err)
-        {
-            //todo
-        }
-        finally
-        {
+    //    }
+    //    catch (Exception err)
+    //    {
+            
+     //   }
+     //   finally
+     //   {
             dbCon.Close();
-        }
+     //   }
         
     }
 

@@ -128,6 +128,7 @@ public partial class OrderPage_Order : System.Web.UI.Page
         
         // CREATE AN ORDER IN THE DB
         FrontBoardDA.InsertInvoice(invoice);
+        FrontBoardDA.DeleteItem(item);
 
         Response.Redirect("~/OrderPage/Thanks.aspx");
     }
