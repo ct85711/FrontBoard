@@ -44,7 +44,7 @@ public partial class CreateAccount : System.Web.UI.Page
 
     //protected void btnCreateAccount_Click(object sender, EventArgs e)
     //{
-    //    string firstName = FormView1.Controls;
+    //    string firstName = FormView1.;
     //    string lastName = LastNameTextBox.Text;
     //    string address = txtAddress.Text;
     //    string city = txtCity.Text;
@@ -114,5 +114,15 @@ public partial class CreateAccount : System.Web.UI.Page
             lblChanged.Visible = true;
             lblChanged.Text = "Username not found in database";
         }
+    }
+
+    protected void InsertAccount(object sender, FormViewInsertedEventArgs e)
+    {
+        FormView item = sender as FormView;
+        TextBox username = (TextBox)item.FindControl("UserNameTextBox");
+        Customer loginCust = FrontBoardDA.GetCustomerByUsername(username.Text);
+
+        Session["createAccount"] = loginCust;
+        Response.Redirect("~/Default.aspx");
     }
 } // End of class
