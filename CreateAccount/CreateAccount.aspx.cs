@@ -42,47 +42,6 @@ public partial class CreateAccount : System.Web.UI.Page
         }
     }
 
-    //protected void btnCreateAccount_Click(object sender, EventArgs e)
-    //{
-    //    string firstName = FormView1.Controls;
-    //    string lastName = LastNameTextBox.Text;
-    //    string address = txtAddress.Text;
-    //    string city = txtCity.Text;
-    //    string state = txtState.Text;
-    //    string zipcode = txtZip.Text;
-    //    string phone = txtPhone.Text;
-    //    string email = txtEmail.Text;
-    //    string username = txtUsername.Text;
-    //    string password = txtPassword.Text;
-
-    //    try
-    //    {
-    //        var cust = FrontBoardDA.GetCustomerByUsername(username);
-
-    //        if (cust == null)
-    //        {
-    //            lblErrorMessage.Text = string.Empty;
-
-    //            Customer newCustomer = new Customer(firstName, lastName, address, city, state, zipcode, phone, email, username, password);
-
-    //            FrontBoardDA.InsertCustomer(newCustomer);
-
-    //            // TODO - Create a Customer in the Database
-    //            Session["createAccount"] = newCustomer;
-
-    //            Server.Transfer("~/Default.aspx");
-    //        }
-    //        else
-    //        {
-    //            lblErrorMessage.Text = "That username already exists. Please choose a different one.";
-    //        }
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        lblErrorMessage.Text = "Sorry, there was an error connecting to the database. Try again later.";
-    //    }
-    //}
-
     protected void btnChangePasswod_Click(object sender, EventArgs e)
     {
         Response.Redirect("~/CreateAccount/ChangePassword.aspx");
@@ -114,5 +73,15 @@ public partial class CreateAccount : System.Web.UI.Page
             lblChanged.Visible = true;
             lblChanged.Text = "Username not found in database";
         }
+    }
+
+    protected void InsertAccount(object sender, FormViewInsertedEventArgs e)
+    {
+        FormView item = sender as FormView;
+        TextBox username = (TextBox)item.FindControl("UserNameTextBox");
+        Customer loginCust = FrontBoardDA.GetCustomerByUsername(username.Text);
+
+        Session["createAccount"] = loginCust;
+        Response.Redirect("~/Default.aspx");
     }
 } // End of class

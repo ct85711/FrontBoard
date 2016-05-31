@@ -81,7 +81,7 @@ public partial class OrderPage_Order : System.Web.UI.Page
             cell2.Text = i.description;
             row.Cells.Add(cell2);
             TableCell cell3 = new TableCell();
-            cell3.Text = i.price.ToString();
+            cell3.Text = i.price.ToString("C");
             row.Cells.Add(cell3);
             TableCell cell4 = new TableCell();
             cell4.Controls.Add(btnPurchase);
