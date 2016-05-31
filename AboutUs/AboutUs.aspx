@@ -14,9 +14,9 @@
     <div id="floatleft">
         <h2>River City Art Gallery</h2>
         <p>The River City Art Gallery, located in beautiful downtown River City has an impressive display of art from local artists! Founded in 1970 with a grant from the Art is Inspiration Foundation, the River City Art Gallery has been promoting local artisans and artwork by featuring their creations during exhibits.
-    Many local artists have realized their fame utilizing our gallery, including Salvedore Dali, the Artist Known as Prince, and many others...
+    Many local artists have realized their fame by utilizing our gallery, including Salvador Dali, the Artist Formerly Known as Prince (R.I.P.), and many others...
         </p>
-        <p>Recently other local artists have started at the River City Art Gallery and gone on to national fame. These artists include John Buhrmann, John Schmidt, Nathan Jochum, Craig D., Chris Torske, and Brandon Welch.</p>
+        <p>Recently other local artists have started at the River City Art Gallery and gone on to achieve national fame. These artists include John Buhrmann, John Schmidt, Nathan Jochum, Craig Pounds, Chris Torske, and Brandon Welch.</p>
         <br />
         <asp:HyperLink ID="lnkContactUs" runat="server" NavigateUrl="~/ContactUs/ContactUs.aspx">Contact Us</asp:HyperLink>
         <br />

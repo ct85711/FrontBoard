@@ -44,5 +44,7 @@ public partial class ContactUs_ContactUs : System.Web.UI.Page
         txtLastName.Text = string.Empty;
         txtEmail.Text = string.Empty;
         txtBox.Text = string.Empty;
+
+        lblContactMessage.Text = "Thank you for contacting us. We'll get back to you within the next 25 business days.";
     }
 }

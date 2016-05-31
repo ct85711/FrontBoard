@@ -40,11 +40,16 @@
             height: 26px;
             width: 216px;
         }
+        .newStyle1 {
+            margin-left: 10em;
+            margin-right: auto;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceholder" runat="Server">
     <br />
     <asp:Label ID="lblCreateAccount" runat="server" Font-Bold="True" Font-Size="X-Large" Text="Ask Us A Question"></asp:Label>
+    <asp:Label ID="lblContactMessage" runat="server" CssClass="newStyle1"></asp:Label>
     <br />
     <br />    
     <table class="auto-style1">
