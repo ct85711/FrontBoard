@@ -10,6 +10,7 @@
     <asp:Button ID="btnQuestions" runat="server" Text="Customer Questions" Width="139px" OnClick="btnQuestions_Click" Visible="False" />
     &nbsp;<asp:Button ID="btnOrders" runat="server" OnClick="btnOrders_Click" Text="Orders" Visible="False" Width="149px" />
     &nbsp;<asp:Button ID="btnProducts" runat="server" OnClick="btnProducts_Click" Text="Products" Visible="False" Width="150px" />
+    &nbsp;<asp:Button ID="btnReload" runat="server" OnClick="btnReload_Click" Text="Reload Products" Visible="False" />
     <br />
     <br />
 

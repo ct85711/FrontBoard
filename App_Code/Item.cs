@@ -25,11 +25,12 @@ public class Item
 		//
 	}
 
-    public Item (int artId, int supplierId, string artType, decimal price, string description, string imageFile)
+    public Item (int artId, int supplierId, string artName, string artType, decimal price, string description, string imageFile)
     {
         this.artId = artId;
         this.supplierId = supplierId;
         this.artName = artName;
+        this.artType = artType;
         this.price = price;
         this.description = description;
         this.imageFile = imageFile;
