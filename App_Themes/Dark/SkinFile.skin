@@ -20,6 +20,7 @@ Dark Theme skin template. The following skins are provided as examples only.
 </asp:DataList>
 
 <asp:button runat="server" BackColor="#8CBAE8" ForeColor="#000000"/>
+<asp:LinkButton runat="server" ForeColor="#8CBAE8" />
 <asp:label runat="server" ForeColor="white" />
 
 <asp:TreeView 
