@@ -705,4 +705,58 @@ public static class FrontBoardDA
         }
 
     }
+
+    public static int GetCounter(String page)
+    {
+        int counter = 0;
+        string get = "select Counter from HitCounter where ID = '" + page + "'";
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand getCmd = new SqlCommand(get, dbCon);
+
+        try
+        {
+            dbCon.Open();
+
+
+
+            counter = (int)getCmd.ExecuteScalar();
+           
+        }
+        catch (Exception err)
+        {
+            string errm = err.Message;
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+        return counter;
+    }
+
+    public static void UpdateCounter(String page, int counter)
+    {
+        string upd = "update HitCounter set "
+        + "counter = @counter "
+        + "where ID = '" + page + "'";
+        SqlConnection dbCon = new SqlConnection(FrontBoardDA.GetDBConnectionString());
+        SqlCommand updCmd = new SqlCommand(upd, dbCon);
+
+        updCmd.Parameters.AddWithValue("counter", counter);
+
+        // open the connection to the database
+        try
+        {
+            dbCon.Open();
+
+            updCmd.ExecuteNonQuery();
+        }
+        catch (Exception err)
+        {
+            string errm = err.Message;
+        }
+        finally
+        {
+            dbCon.Close();
+        }
+    }
 }

@@ -21,15 +21,10 @@ public class Counter
     public static int getCount()
     {
         int counter = 0;
-        string text;
-        var fileStream = new FileStream(HttpContext.Current.Server.MapPath("/Counter.txt"), FileMode.Open, FileAccess.Read);
-        using (var streamReader = new StreamReader(fileStream, Encoding.UTF8))
-        {
-            text = streamReader.ReadToEnd();
-        }
+        
         try
         {
-            counter = Int16.Parse(text);
+            counter = FrontBoardDA.GetCounter("MainPage");
         }
         catch (Exception e )
         {
@@ -38,13 +33,11 @@ public class Counter
         return counter;
     }
 
-    public static void addView()
+    public static void addView(int counter)
     {
-        int counter = getCount() + 1;
-        string text = counter.ToString();
         try
         {
-            File.WriteAllText(HttpContext.Current.Server.MapPath("/Counter.txt"), text);
+            FrontBoardDA.UpdateCounter("MainPage",counter + 1);
         }
         catch (Exception e)
         {
